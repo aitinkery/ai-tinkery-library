@@ -17,7 +17,7 @@ from flask import Flask, jsonify, request, send_from_directory
 # updated backend.gs there separately.
 CLAUDE_BACKEND_URL = (
     'https://script.google.com/macros/s/'
-    'AKfycbygP5mGHqEprhWDEVhEYahonPnPhZLSpwLoGo5n39-RttowqSp_qKAs1MEYERrZ0kaz/exec'
+    'AKfycbx-JlO5YkxKntexNohBdtRHVvtsSVQdm1jsyLTIMbpr8nvRnLrkyYhNjwpVrL6-19qv/exec'
 )
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
