@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>AI Tinkery Library — Stanford</title>
+
+<!-- PWA -->
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#c7520a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="AI Tinkery">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="description" content="Filterable library of hands-on AI activities from the Stanford AI Tinkery.">
+
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --brand: #c7520a;
+    --brand-dark: #a34308;
+    --ink: #191d19;
+    --ink-soft: #474747;
+    --ink-mute: #787878;
+    --bg: #f7f7f7;
+    --card: #ffffff;
+    --line: rgba(26,29,25,0.10);
+    --highlight: rgba(199,82,10,0.14);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+  }
+
+  a { color: inherit; }
+
+  /* ---------- Header ---------- */
+  header.site {
+    position: sticky; top: 0; z-index: 40;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+  }
+  .site-inner {
+    max-width: 1200px; margin: 0 auto;
+    padding: 14px 24px;
+    display: flex; align-items: center; gap: 16px; justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .brand-group { display: flex; align-items: center; gap: 14px; }
+  .brand-logo { width: 52px; height: 52px; display: inline-block; }
+  .brand-logo img { width: 100%; height: 100%; object-fit: contain; }
+  .brand-title {
+    font-family: 'Bungee', cursive;
+    font-size: 22px;
+    color: var(--brand);
+    line-height: 1;
+  }
+  .brand-title .lib {
+    display: block;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--ink-soft);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .stanford-mark img { height: 40px; object-fit: contain; }
+
+  .site-actions { display: flex; gap: 10px; align-items: center; }
+  .pill-btn {
+    background: #fff; border: 1.5px solid var(--brand); color: var(--brand);
+    padding: 8px 16px; border-radius: 9999px; cursor: pointer;
+    font-weight: 700; font-size: 14px; font-family: inherit;
+  }
+  .pill-btn.solid { background: var(--brand); color: #fff; }
+  .pill-btn:hover { background: var(--brand); color: #fff; }
+  .pill-btn.solid:hover { background: var(--brand-dark); border-color: var(--brand-dark); }
+
+  /* ---------- Tagline ---------- */
+  .tagline {
+    max-width: 1200px; margin: 0 auto;
+    padding: 28px 24px 8px;
+  }
+  .tagline h1 {
+    font-family: 'Bungee', cursive;
+    font-size: 34px; line-height: 1.1;
+    color: var(--ink);
+  }
+  .tagline p {
+    font-size: 16px; color: var(--ink-soft);
+    margin-top: 8px;
+    max-width: 720px;
+  }
+
+  /* ---------- Filters ---------- */
+  .filters {
+    max-width: 1200px; margin: 20px auto 0;
+    padding: 0 24px;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .filter-row {
+    display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+  }
+  .filter-label {
+    font-size: 12px; font-weight: 700; color: var(--ink-mute);
+    text-transform: uppercase; letter-spacing: 0.06em;
+    margin-right: 8px;
+    min-width: 72px;
+  }
+  .chip {
+    background: #fff; border: 1px solid var(--line);
+    padding: 7px 14px; border-radius: 9999px; cursor: pointer;
+    font-size: 14px; font-family: inherit; color: var(--ink-soft);
+    transition: border-color 0.15s, background 0.15s, color 0.15s;
+  }
+  .chip:hover { border-color: var(--brand); color: var(--brand); }
+  .chip[aria-pressed="true"] {
+    background: var(--brand); border-color: var(--brand); color: #fff;
+  }
+  .chip:focus-visible { outline: 3px solid rgba(199,82,10,0.35); outline-offset: 2px; }
+
+  .search-row { display: flex; gap: 10px; align-items: center; }
+  .search-row input[type="search"] {
+    flex: 1; min-width: 220px;
+    padding: 10px 14px; border-radius: 9999px;
+    border: 1px solid var(--line); background: #fff;
+    font: inherit; font-size: 15px; color: var(--ink);
+  }
+  .search-row input[type="search"]:focus {
+    outline: none; border-color: var(--brand);
+    box-shadow: 0 0 0 3px rgba(199,82,10,0.15);
+  }
+  .result-count { font-size: 13px; color: var(--ink-mute); }
+  .clear-btn {
+    background: transparent; border: none; color: var(--brand);
+    font: inherit; font-weight: 700; font-size: 14px;
+    cursor: pointer; padding: 6px 10px; border-radius: 6px;
+  }
+  .clear-btn:hover { background: var(--highlight); }
+
+  /* ---------- Grid ---------- */
+  main.grid-wrap { max-width: 1200px; margin: 0 auto; padding: 20px 24px 120px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 14px;
+    display: flex; flex-direction: column;
+    transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+    position: relative;
+  }
+  .card:hover { border-color: rgba(199,82,10,0.5); box-shadow: 0 6px 18px rgba(199,82,10,0.10); }
+  .card.is-highlighted {
+    border-color: var(--brand); box-shadow: 0 6px 22px rgba(199,82,10,0.28);
+    transform: translateY(-2px);
+  }
+  .card.is-highlighted::after {
+    content: "Suggested"; position: absolute; top: 10px; right: 10px;
+    background: var(--brand); color: #fff; font-size: 11px; font-weight: 700;
+    padding: 3px 8px; border-radius: 9999px;
+  }
+
+  .card .img-wrap {
+    width: 100%; aspect-ratio: 4/3;
+    background: #f0eee9; border-radius: 10px;
+    overflow: hidden; margin-bottom: 10px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .card .img-wrap img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+  .card h3 {
+    font-size: 16px; font-weight: 700; color: var(--ink);
+    line-height: 1.25; margin-bottom: 4px;
+  }
+  .card .meta {
+    font-size: 12px; color: var(--ink-mute);
+    display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 8px;
+  }
+  .card p.desc {
+    font-size: 13.5px; color: var(--ink-soft);
+    line-height: 1.5;
+    margin-bottom: 12px;
+    flex: 1;
+    display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .card-row { display: flex; gap: 8px; align-items: center; }
+  .btn-explore {
+    background: var(--brand); color: #fff;
+    padding: 8px 14px; border-radius: 9999px;
+    text-decoration: none; font-weight: 700; font-size: 13px;
+    flex: 1; text-align: center;
+    transition: background 0.15s;
+  }
+  .btn-explore:hover { background: var(--brand-dark); }
+  .icon-btn {
+    background: #fff; border: 1px solid var(--line);
+    width: 36px; height: 36px; border-radius: 9999px;
+    font-size: 16px; cursor: pointer; color: var(--ink-soft);
+    display: inline-flex; align-items: center; justify-content: center;
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+  }
+  .icon-btn:hover { border-color: var(--brand); color: var(--brand); }
+  .icon-btn[aria-pressed="true"] { color: var(--brand); background: var(--highlight); border-color: var(--brand); }
+
+  .empty {
+    text-align: center; padding: 60px 20px; color: var(--ink-mute);
+    background: #fff; border: 1px dashed var(--line); border-radius: 14px;
+  }
+  .empty strong { color: var(--ink); display: block; font-size: 18px; margin-bottom: 6px; }
+
+  /* ---------- Saved drawer ---------- */
+  .drawer-backdrop {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.35);
+    opacity: 0; pointer-events: none; transition: opacity 0.2s; z-index: 60;
+  }
+  .drawer-backdrop.open { opacity: 1; pointer-events: auto; }
+  .drawer {
+    position: fixed; top: 0; right: 0; bottom: 0;
+    width: min(420px, 100%);
+    background: #fff; z-index: 70;
+    transform: translateX(100%); transition: transform 0.25s ease;
+    display: flex; flex-direction: column;
+    box-shadow: -4px 0 20px rgba(0,0,0,0.12);
+  }
+  .drawer.open { transform: translateX(0); }
+  .drawer header {
+    padding: 16px 18px; border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .drawer header h2 { font-size: 17px; font-weight: 700; }
+  .drawer .close {
+    background: transparent; border: none; font-size: 20px; cursor: pointer;
+    color: var(--ink-soft); padding: 4px 8px; border-radius: 6px;
+  }
+  .drawer .close:hover { color: var(--brand); }
+  .drawer .body { flex: 1; overflow-y: auto; padding: 14px 18px; }
+  .drawer .actions {
+    padding: 12px 18px; border-top: 1px solid var(--line);
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .saved-item {
+    display: flex; gap: 10px; align-items: flex-start;
+    padding: 10px 0; border-bottom: 1px solid var(--line);
+  }
+  .saved-item:last-child { border-bottom: none; }
+  .saved-item img { width: 54px; height: 54px; object-fit: contain; background: #f0eee9; border-radius: 6px; flex-shrink: 0; }
+  .saved-item .info { flex: 1; min-width: 0; }
+  .saved-item h4 { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+  .saved-item p { font-size: 12px; color: var(--ink-mute); }
+  .saved-item a { color: var(--brand); font-size: 12px; font-weight: 700; text-decoration: none; }
+  .saved-item .remove {
+    background: transparent; border: none; color: var(--ink-mute); cursor: pointer;
+    font-size: 16px; padding: 2px 6px;
+  }
+  .saved-item .remove:hover { color: var(--brand); }
+
+  /* ---------- Chat panel ---------- */
+  .chat-fab {
+    position: fixed; right: 20px; bottom: 20px; z-index: 50;
+    background: var(--brand); color: #fff; border: none;
+    padding: 14px 20px; border-radius: 9999px;
+    font-family: inherit; font-size: 15px; font-weight: 700;
+    cursor: pointer; box-shadow: 0 6px 18px rgba(199,82,10,0.38);
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: background 0.15s, transform 0.15s;
+  }
+  .chat-fab:hover { background: var(--brand-dark); transform: translateY(-1px); }
+  .chat-fab .icon { font-size: 18px; }
+
+  .chat-panel {
+    position: fixed; right: 20px; bottom: 20px; z-index: 55;
+    width: min(420px, calc(100vw - 40px));
+    height: min(640px, calc(100vh - 40px));
+    background: #fff; border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.22);
+    display: none; flex-direction: column; overflow: hidden;
+  }
+  .chat-panel.open { display: flex; }
+  .chat-head {
+    background: var(--brand); color: #fff;
+    padding: 14px 16px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .chat-head h2 { font-size: 16px; font-weight: 700; }
+  .chat-head p { font-size: 12px; opacity: 0.9; }
+  .chat-head .close {
+    background: transparent; border: none; color: #fff; font-size: 22px; cursor: pointer;
+    line-height: 1; padding: 4px 8px; border-radius: 6px;
+  }
+  .chat-head .close:hover { background: rgba(255,255,255,0.15); }
+  .chat-body {
+    flex: 1; overflow-y: auto; padding: 14px;
+    display: flex; flex-direction: column; gap: 12px;
+    background: #faf8f5;
+  }
+  .msg { max-width: 90%; }
+  .msg.user { align-self: flex-end; }
+  .msg.bot  { align-self: flex-start; }
+  .msg .bubble {
+    padding: 10px 14px; border-radius: 14px;
+    font-size: 14px; line-height: 1.5;
+    white-space: pre-wrap; word-wrap: break-word;
+  }
+  .msg.user .bubble { background: var(--brand); color: #fff; border-bottom-right-radius: 4px; }
+  .msg.bot  .bubble { background: #fff; color: var(--ink); border: 1px solid var(--line); border-bottom-left-radius: 4px; }
+  .suggestions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+  .sugg-btn {
+    background: #fff; border: 1px solid var(--brand); color: var(--brand);
+    padding: 6px 12px; border-radius: 9999px; cursor: pointer;
+    font: inherit; font-size: 13px;
+  }
+  .sugg-btn:hover { background: var(--brand); color: #fff; }
+
+  .chat-foot {
+    border-top: 1px solid var(--line);
+    padding: 10px; background: #fff;
+  }
+  .chat-input-row {
+    display: flex; gap: 8px; align-items: center;
+    background: #faf8f5; border: 1px solid var(--line);
+    border-radius: 9999px; padding: 4px 4px 4px 14px;
+  }
+  .chat-input-row input {
+    flex: 1; border: none; outline: none; background: transparent;
+    font: inherit; font-size: 14px; padding: 8px 0; color: var(--ink);
+  }
+  .chat-input-row button {
+    background: var(--brand); color: #fff; border: none;
+    padding: 8px 14px; border-radius: 9999px; cursor: pointer;
+    font: inherit; font-weight: 700; font-size: 13px;
+  }
+  .chat-input-row button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  .msg.bot.typing .bubble::after {
+    content: "…"; display: inline-block;
+    animation: blink 1.2s infinite;
+  }
+  @keyframes blink { 0%,60%,100%{opacity:.2} 30%{opacity:1} }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 680px) {
+    .site-inner { padding: 10px 14px; gap: 10px; }
+    .brand-logo { width: 40px; height: 40px; }
+    .brand-title { font-size: 18px; }
+    .stanford-mark img { height: 28px; }
+    .tagline { padding: 18px 16px 4px; }
+    .tagline h1 { font-size: 26px; }
+    .tagline p { font-size: 15px; }
+    .filters { padding: 0 16px; }
+    .filter-label { min-width: 0; display: block; width: 100%; margin-bottom: 4px; }
+    main.grid-wrap { padding: 16px 16px 120px; }
+    .grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+    .card { padding: 10px; }
+    .card h3 { font-size: 14px; }
+    .card p.desc { font-size: 12.5px; -webkit-line-clamp: 3; }
+    .chat-fab { right: 12px; bottom: 12px; padding: 12px 16px; font-size: 14px; }
+    .chat-panel { right: 0; bottom: 0; width: 100%; height: 100%; border-radius: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="site-inner">
+    <div class="brand-group">
+      <span class="brand-logo"><img src="/images/robot-logo.jpg" alt="AI Tinkery robot logo"></span>
+      <div class="brand-title">
+        AI Tinkery
+        <span class="lib">Activity Library</span>
+      </div>
+    </div>
+    <div class="stanford-mark">
+      <img src="/images/stanford-logo.jpg" alt="Stanford Accelerator for Learning">
+    </div>
+    <div class="site-actions">
+      <button class="pill-btn" id="savedOpenBtn" aria-haspopup="dialog" aria-controls="savedDrawer">
+        ☆ Saved (<span id="savedCount">0</span>)
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="tagline">
+  <h1>Hands-on AI activities from Stanford's AI Tinkery.</h1>
+  <p>Browse, filter, and save activities for yourself or your classroom. Not sure where to start? <a href="#" id="taglineChatLink" style="color: var(--brand); font-weight: 700;">Ask the Tinkery guide</a>.</p>
+</section>
+
+<nav class="filters" aria-label="Filter activities">
+  <div class="filter-row" role="group" aria-label="Audience">
+    <span class="filter-label">Audience</span>
+    <button class="chip" data-group="audience" data-value="all" aria-pressed="true">All</button>
+    <button class="chip" data-group="audience" data-value="Teacher" aria-pressed="false">Teacher</button>
+    <button class="chip" data-group="audience" data-value="Student" aria-pressed="false">Student</button>
+  </div>
+  <div class="filter-row" role="group" aria-label="Category">
+    <span class="filter-label">Category</span>
+    <button class="chip" data-group="category" data-value="all" aria-pressed="true">All</button>
+    <button class="chip" data-group="category" data-value="Learn About AI">Learn About AI</button>
+    <button class="chip" data-group="category" data-value="Use AI">Use AI</button>
+    <button class="chip" data-group="category" data-value="Create With AI">Create With AI</button>
+    <button class="chip" data-group="category" data-value="Learn/Teach With AI">Learn &amp; Teach With AI</button>
+    <button class="chip" data-group="category" data-value="Shape AI">Shape AI</button>
+    <button class="chip" data-group="category" data-value="Thoughtful AI">Thoughtful AI</button>
+  </div>
+  <div class="filter-row" role="group" aria-label="Time">
+    <span class="filter-label">Time</span>
+    <button class="chip" data-group="time" data-value="all" aria-pressed="true">Any</button>
+    <button class="chip" data-group="time" data-value="15">≤ 15 min</button>
+    <button class="chip" data-group="time" data-value="30">≤ 30 min</button>
+    <button class="chip" data-group="time" data-value="60">≤ 1 hour</button>
+  </div>
+  <div class="filter-row search-row">
+    <span class="filter-label">Search</span>
+    <input type="search" id="searchInput" placeholder="e.g. bias, music, storytelling, 8th grade" aria-label="Search activities">
+    <span class="result-count" id="resultCount"></span>
+    <button class="clear-btn" id="clearFiltersBtn" type="button">Clear filters</button>
+  </div>
+</nav>
+
+<main class="grid-wrap">
+  <div class="grid" id="grid" role="list"></div>
+  <div class="empty" id="emptyState" hidden>
+    <strong>No activities match — try removing a filter.</strong>
+    <span>Tip: keep one filter at a time and narrow from there.</span>
+  </div>
+</main>
+
+<!-- Saved drawer -->
+<div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+<aside class="drawer" id="savedDrawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" hidden>
+  <header>
+    <h2 id="drawerTitle">Saved activities</h2>
+    <button class="close" id="drawerCloseBtn" aria-label="Close saved activities">✕</button>
+  </header>
+  <div class="body" id="drawerBody"></div>
+  <div class="actions">
+    <button class="pill-btn solid" id="copyListBtn">📋 Copy all as list</button>
+    <button class="pill-btn" id="emailListBtn">✉️ Email me this list</button>
+  </div>
+</aside>
+
+<!-- Chat -->
+<button class="chat-fab" id="chatFab" aria-haspopup="dialog" aria-controls="chatPanel">
+  <span class="icon" aria-hidden="true">💬</span>
+  <span>Ask the Tinkery guide</span>
+</button>
+
+<aside class="chat-panel" id="chatPanel" role="dialog" aria-modal="false" aria-labelledby="chatTitle" hidden>
+  <div class="chat-head">
+    <div>
+      <h2 id="chatTitle">Tinkery Guide</h2>
+      <p>I'll point you to activities that fit.</p>
+    </div>
+    <button class="close" id="chatCloseBtn" aria-label="Close chat">✕</button>
+  </div>
+  <div class="chat-body" id="chatBody" role="log" aria-live="polite"></div>
+  <div class="chat-foot">
+    <div class="chat-input-row">
+      <input type="text" id="chatInput" maxlength="500"
+        placeholder="Try: a 30-min activity about AI bias for 8th graders"
+        aria-label="Message the Tinkery guide">
+      <button id="chatSendBtn">Send</button>
+    </div>
+  </div>
+</aside>
+
+<script>
+(function () {
+  'use strict';
+
+  const CLAUDE_BACKEND_URL = '/api/claude';
+  const SAVED_KEY = 'aiTinkery.saved.v1';
+
+  // ---------- State ----------
+  const state = {
+    activities: [],
+    byId: new Map(),
+    filters: { audience: 'all', category: 'all', time: 'all', search: '' },
+    saved: loadSaved(),
+    highlightedIds: new Set(),
+    chat: {
+      history: [],           // [{role, content}]
+      opened: false
+    }
+  };
+
+  // ---------- DOM ----------
+  const $ = (id) => document.getElementById(id);
+  const grid = $('grid');
+  const emptyState = $('emptyState');
+  const resultCount = $('resultCount');
+  const searchInput = $('searchInput');
+
+  // ---------- Escape ----------
+  const ESC_MAP = { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' };
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, c => ESC_MAP[c]); }
+
+  // ---------- Saved list ----------
+  function loadSaved() {
+    try {
+      const raw = localStorage.getItem(SAVED_KEY);
+      if (!raw) return new Set();
+      const arr = JSON.parse(raw);
+      return new Set(Array.isArray(arr) ? arr : []);
+    } catch { return new Set(); }
+  }
+  function persistSaved() {
+    try { localStorage.setItem(SAVED_KEY, JSON.stringify([...state.saved])); } catch {}
+  }
+  function toggleSaved(id) {
+    if (state.saved.has(id)) state.saved.delete(id); else state.saved.add(id);
+    persistSaved();
+    updateSavedCount();
+    // Update the save button on the card
+    const btn = grid.querySelector(`[data-save-id="${CSS.escape(id)}"]`);
+    if (btn) {
+      const on = state.saved.has(id);
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.textContent = on ? '★' : '☆';
+      btn.title = on ? 'Remove from saved' : 'Save for later';
+    }
+  }
+  function updateSavedCount() { $('savedCount').textContent = state.saved.size; }
+
+  // ---------- Filtering ----------
+  function matches(a) {
+    const f = state.filters;
+    if (f.audience !== 'all' && !a.audience.includes(f.audience)) return false;
+    if (f.category !== 'all' && a.category !== f.category) return false;
+    if (f.time !== 'all') {
+      const cap = parseInt(f.time, 10);
+      if (a.time_minutes == null || a.time_minutes > cap) return false;
+    }
+    if (f.search) {
+      const q = f.search.toLowerCase();
+      const hay = (a.name + ' ' + a.description + ' ' + a.keywords.join(' ')).toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  }
+
+  function render() {
+    const results = state.activities.filter(matches);
+    grid.innerHTML = results.map(cardHtml).join('');
+    emptyState.hidden = results.length !== 0;
+    resultCount.textContent = `${results.length} of ${state.activities.length}`;
+    // Apply highlights
+    for (const id of state.highlightedIds) {
+      const el = grid.querySelector(`[data-card-id="${CSS.escape(id)}"]`);
+      if (el) el.classList.add('is-highlighted');
+    }
+  }
+
+  function cardHtml(a) {
+    const saved = state.saved.has(a.id);
+    const audienceTxt = a.audience.length ? a.audience.join(' + ') : '—';
+    const link = esc(a.link);
+    const safeLink = /^(https?:)?\/\//.test(a.link) ? link : 'https://' + link;
+    return `
+      <article class="card" data-card-id="${esc(a.id)}" role="listitem">
+        <div class="img-wrap">
+          <img src="${esc(a.image)}" alt="${esc(a.name)}" loading="lazy">
+        </div>
+        <h3>${esc(a.name)}</h3>
+        <div class="meta">
+          <span>⏱ ${esc(a.time || 'Self-paced')}</span>
+          <span>👥 ${esc(audienceTxt)}</span>
+          <span>🏷 ${esc(a.category)}</span>
+        </div>
+        <p class="desc">${esc(a.description)}</p>
+        <div class="card-row">
+          <a class="btn-explore" href="${safeLink}" target="_blank" rel="noopener"
+             aria-label="Explore ${esc(a.name)} (opens in new tab)">Explore →</a>
+          <button class="icon-btn" data-save-id="${esc(a.id)}"
+                  aria-pressed="${saved ? 'true':'false'}"
+                  title="${saved ? 'Remove from saved' : 'Save for later'}"
+                  aria-label="${saved ? 'Unsave' : 'Save'} ${esc(a.name)}">${saved ? '★' : '☆'}</button>
+          <button class="icon-btn" data-share-id="${esc(a.id)}"
+                  aria-label="Copy link to ${esc(a.name)}" title="Copy link">🔗</button>
+        </div>
+      </article>
+    `;
+  }
+
+  // Grid click delegation — save, share
+  grid.addEventListener('click', (e) => {
+    const saveBtn  = e.target.closest('[data-save-id]');
+    const shareBtn = e.target.closest('[data-share-id]');
+    if (saveBtn)  { toggleSaved(saveBtn.getAttribute('data-save-id')); renderSavedDrawer(); return; }
+    if (shareBtn) {
+      const id = shareBtn.getAttribute('data-share-id');
+      const a = state.byId.get(id);
+      if (!a) return;
+      copyToClipboard(a.link).then(() => flashButton(shareBtn, '✓'));
+    }
+  });
+
+  function flashButton(btn, text) {
+    const orig = btn.textContent;
+    btn.textContent = text;
+    setTimeout(() => { btn.textContent = orig; }, 900);
+  }
+
+  async function copyToClipboard(text) {
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch {
+      // Fallback
+      const ta = document.createElement('textarea');
+      ta.value = text; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch {}
+      ta.remove();
+    }
+  }
+
+  // ---------- Filter chips ----------
+  document.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const group = chip.getAttribute('data-group');
+      const value = chip.getAttribute('data-value');
+      state.filters[group] = value;
+      // Update pressed state within the group
+      document.querySelectorAll(`.chip[data-group="${group}"]`).forEach(c => {
+        c.setAttribute('aria-pressed', c === chip ? 'true' : 'false');
+      });
+      // When user changes filters, drop highlight (it was from chat recs)
+      state.highlightedIds.clear();
+      render();
+    });
+  });
+
+  searchInput.addEventListener('input', () => {
+    state.filters.search = searchInput.value.trim();
+    state.highlightedIds.clear();
+    render();
+  });
+
+  $('clearFiltersBtn').addEventListener('click', () => {
+    state.filters = { audience: 'all', category: 'all', time: 'all', search: '' };
+    searchInput.value = '';
+    document.querySelectorAll('.chip').forEach(c => {
+      c.setAttribute('aria-pressed', c.getAttribute('data-value') === 'all' ? 'true' : 'false');
+    });
+    state.highlightedIds.clear();
+    render();
+  });
+
+  // ---------- Saved drawer ----------
+  const drawer         = $('savedDrawer');
+  const drawerBackdrop = $('drawerBackdrop');
+
+  function openDrawer() {
+    drawer.hidden = false; drawerBackdrop.hidden = false;
+    requestAnimationFrame(() => {
+      drawer.classList.add('open'); drawerBackdrop.classList.add('open');
+    });
+    renderSavedDrawer();
+  }
+  function closeDrawer() {
+    drawer.classList.remove('open'); drawerBackdrop.classList.remove('open');
+    setTimeout(() => { drawer.hidden = true; drawerBackdrop.hidden = true; }, 260);
+  }
+  $('savedOpenBtn').addEventListener('click', openDrawer);
+  $('drawerCloseBtn').addEventListener('click', closeDrawer);
+  drawerBackdrop.addEventListener('click', closeDrawer);
+
+  function savedActivities() {
+    return state.activities.filter(a => state.saved.has(a.id));
+  }
+
+  function renderSavedDrawer() {
+    const body = $('drawerBody');
+    const list = savedActivities();
+    if (list.length === 0) {
+      body.innerHTML = `<p style="color: var(--ink-mute); padding: 20px 0; text-align:center;">
+        No saved activities yet. Tap the ☆ on any card.</p>`;
+      return;
+    }
+    body.innerHTML = list.map(a => `
+      <div class="saved-item">
+        <img src="${esc(a.image)}" alt="">
+        <div class="info">
+          <h4>${esc(a.name)}</h4>
+          <p>⏱ ${esc(a.time || 'Self-paced')} · ${esc(a.category)}</p>
+          <a href="${esc(a.link)}" target="_blank" rel="noopener">Open activity ↗</a>
+        </div>
+        <button class="remove" data-remove-id="${esc(a.id)}" aria-label="Remove ${esc(a.name)} from saved">✕</button>
+      </div>
+    `).join('');
+  }
+
+  $('drawerBody').addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-remove-id]');
+    if (!btn) return;
+    toggleSaved(btn.getAttribute('data-remove-id'));
+    renderSavedDrawer();
+  });
+
+  function savedAsText() {
+    return savedActivities().map(a =>
+      `• ${a.name} (${a.time || 'self-paced'}) — ${a.link}`
+    ).join('\n');
+  }
+
+  $('copyListBtn').addEventListener('click', () => {
+    const text = savedAsText();
+    if (!text) return;
+    copyToClipboard(text).then(() => {
+      const btn = $('copyListBtn');
+      const orig = btn.textContent;
+      btn.textContent = '✓ Copied';
+      setTimeout(() => { btn.textContent = orig; }, 1200);
+    });
+  });
+
+  $('emailListBtn').addEventListener('click', () => {
+    const list = savedActivities();
+    if (!list.length) return;
+    const body = encodeURIComponent(
+      "Activities I want to try from the Stanford AI Tinkery:\n\n" +
+      savedAsText() +
+      "\n\nBrowse more: " + location.origin + "\n"
+    );
+    const subject = encodeURIComponent("AI Tinkery — saved activities");
+    location.href = `mailto:?subject=${subject}&body=${body}`;
+  });
+
+  // ---------- Chat panel ----------
+  const chatPanel = $('chatPanel');
+  const chatBody  = $('chatBody');
+  const chatInput = $('chatInput');
+  const chatSend  = $('chatSendBtn');
+
+  function openChat() {
+    chatPanel.hidden = false;
+    chatPanel.classList.add('open');
+    state.chat.opened = true;
+    if (state.chat.history.length === 0) seedChat();
+    setTimeout(() => chatInput.focus(), 50);
+  }
+  function closeChat() {
+    chatPanel.classList.remove('open');
+    setTimeout(() => { chatPanel.hidden = true; }, 220);
+  }
+  $('chatFab').addEventListener('click', () => {
+    if (chatPanel.classList.contains('open')) closeChat(); else openChat();
+  });
+  $('chatCloseBtn').addEventListener('click', closeChat);
+  $('taglineChatLink').addEventListener('click', (e) => { e.preventDefault(); openChat(); });
+
+  function seedChat() {
+    addBotMessage(
+      "Hi — I'm your guide. Tell me who you are and what you're after, and I'll " +
+      "highlight activities in the library that fit.",
+      ["I'm a teacher", "I'm a student"]
+    );
+  }
+
+  function addUserMessage(text) {
+    const el = document.createElement('div');
+    el.className = 'msg user';
+    el.innerHTML = `<div class="bubble">${esc(text)}</div>`;
+    chatBody.appendChild(el);
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+  function addBotMessage(text, suggestions) {
+    const el = document.createElement('div');
+    el.className = 'msg bot';
+    const sugg = (Array.isArray(suggestions) && suggestions.length >= 2)
+      ? `<div class="suggestions">${suggestions.slice(0, 3).map(s =>
+          `<button class="sugg-btn" type="button">${esc(s)}</button>`).join('')}</div>`
+      : '';
+    el.innerHTML = `<div class="bubble">${esc(text)}</div>${sugg}`;
+    chatBody.appendChild(el);
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+  function addTypingMessage() {
+    const el = document.createElement('div');
+    el.className = 'msg bot typing';
+    el.innerHTML = `<div class="bubble">Thinking</div>`;
+    chatBody.appendChild(el);
+    chatBody.scrollTop = chatBody.scrollHeight;
+    return el;
+  }
+
+  // Suggestion click (event delegation on chatBody)
+  chatBody.addEventListener('click', (e) => {
+    const btn = e.target.closest('.sugg-btn');
+    if (!btn) return;
+    const text = btn.textContent;
+    // Disable the siblings so they can't be clicked twice
+    btn.parentElement.querySelectorAll('.sugg-btn').forEach(b => b.disabled = true);
+    submitChat(text);
+  });
+
+  chatSend.addEventListener('click', () => submitChatFromInput());
+  chatInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); submitChatFromInput(); }
+  });
+  function submitChatFromInput() {
+    const text = chatInput.value.trim();
+    if (!text) return;
+    chatInput.value = '';
+    submitChat(text);
+  }
+
+  async function submitChat(userText) {
+    addUserMessage(userText);
+    state.chat.history.push({ role: 'user', content: userText });
+    const typingEl = addTypingMessage();
+    chatSend.disabled = true; chatInput.disabled = true;
+
+    try {
+      const res = await fetch(CLAUDE_BACKEND_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: userText,
+          history: state.chat.history,
+          // Pass activity IDs so the backend (if updated) can reason over them.
+          activityIds: state.activities.map(a => a.id)
+        })
+      });
+      const data = await res.json();
+      typingEl.remove();
+
+      const parsed = parseBackendResponse(data);
+      state.chat.history.push({ role: 'assistant', content: parsed.text });
+      addBotMessage(parsed.text, parsed.suggestions);
+
+      if (parsed.activityIds && parsed.activityIds.length) {
+        highlightActivities(parsed.activityIds);
+      }
+    } catch (err) {
+      typingEl.remove();
+      addBotMessage("Sorry — I hit a snag reaching the guide. Try again in a moment.", null);
+    } finally {
+      chatSend.disabled = false; chatInput.disabled = false;
+      chatInput.focus();
+    }
+  }
+
+  // Parse the backend response. Preferred shape is:
+  //   { success, response: { text, suggestions: [...], activityIds: [...] } }
+  // We also tolerate the legacy shape (response is a plain string) so the
+  // frontend keeps working until backend.gs is redeployed.
+  function parseBackendResponse(data) {
+    if (!data) return { text: "No response.", suggestions: null, activityIds: [] };
+    if (data.error) return { text: "Error: " + data.error, suggestions: null, activityIds: [] };
+
+    const r = data.response;
+    if (r && typeof r === 'object') {
+      return {
+        text: String(r.text || '').trim() || "(empty response)",
+        suggestions: cleanSuggestions(r.suggestions),
+        activityIds: cleanIds(r.activityIds)
+      };
+    }
+    if (typeof r === 'string') {
+      // Legacy: strip any trailing "SUGGESTIONS: a|b|c" line if present.
+      const m = r.match(/\nSUGGESTIONS:\s*(.+)$/m);
+      if (m) {
+        const sug = m[1].split('|').map(s => s.trim()).filter(Boolean);
+        return { text: r.slice(0, m.index).trim(), suggestions: cleanSuggestions(sug), activityIds: [] };
+      }
+      return { text: r.trim(), suggestions: null, activityIds: [] };
+    }
+    return { text: "Unexpected response shape.", suggestions: null, activityIds: [] };
+  }
+
+  function cleanSuggestions(list) {
+    if (!Array.isArray(list)) return null;
+    const cleaned = list
+      .map(s => String(s || '').trim())
+      .filter(s => s && !s.includes('?') && s.split(/\s+/).length <= 8)
+      .slice(0, 3);
+    return cleaned.length >= 2 ? cleaned : null; // Spec: fewer than 2 → none.
+  }
+  function cleanIds(list) {
+    if (!Array.isArray(list)) return [];
+    return list
+      .map(x => String(x || '').trim())
+      .filter(x => state.byId.has(x))
+      .slice(0, 6);
+  }
+
+  function highlightActivities(ids) {
+    state.highlightedIds = new Set(ids);
+    // Make sure the user can see them even if filters hide them.
+    // Simple approach: if any highlighted id is filtered out, clear filters.
+    const visible = new Set(state.activities.filter(matches).map(a => a.id));
+    const missing = ids.some(id => !visible.has(id));
+    if (missing) {
+      state.filters = { audience: 'all', category: 'all', time: 'all', search: '' };
+      searchInput.value = '';
+      document.querySelectorAll('.chip').forEach(c => {
+        c.setAttribute('aria-pressed', c.getAttribute('data-value') === 'all' ? 'true' : 'false');
+      });
+    }
+    render();
+    // Scroll the first highlighted card into view.
+    const first = grid.querySelector(`[data-card-id="${CSS.escape(ids[0])}"]`);
+    if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  // ---------- Boot ----------
+  async function boot() {
+    updateSavedCount();
+    try {
+      const res = await fetch('/activities.json', { cache: 'no-cache' });
+      const data = await res.json();
+      state.activities = Array.isArray(data) ? data : [];
+      state.byId = new Map(state.activities.map(a => [a.id, a]));
+    } catch (err) {
+      grid.innerHTML = `<div class="empty"><strong>Couldn't load activities.</strong>
+        <span>Refresh to try again.</span></div>`;
+      return;
+    }
+    render();
+  }
+
+  boot();
+
+  // Service worker (PWA).
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    });
+  }
+})();
+</script>
+</body>
+</html>

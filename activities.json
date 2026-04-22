@@ -1,0 +1,822 @@
+[
+  {
+    "id": "activity-01",
+    "name": "Build-a-Bot",
+    "type": "Task Card",
+    "time": "45 minutes",
+    "time_minutes": 45,
+    "audience": [
+      "Teacher"
+    ],
+    "description": "Create a custom chatbot using bot101.app",
+    "link": "https://craft.stanford.edu/resource/how-can-i-build-my-own-chatbot/",
+    "category": "Create With AI",
+    "keywords": [
+      "create",
+      "build",
+      "make",
+      "design",
+      "game",
+      "chatbot",
+      "website"
+    ],
+    "image": "/activity-images/activity-01.jpg"
+  },
+  {
+    "id": "activity-02",
+    "name": "I Love Algorithms Card Game",
+    "type": "Task Card",
+    "time": "45 minutes",
+    "time_minutes": 45,
+    "audience": [
+      "Student"
+    ],
+    "description": "PLAY and TINKER Go to the website and explore a hands-on resource for understanding machine learning without needing any code or screens.",
+    "link": "https://dschool.stanford.edu/tools/i-love-algorithms-machineless-machine-learning",
+    "category": "Learn About AI",
+    "keywords": [
+      "learn",
+      "understand",
+      "fundamentals",
+      "intro",
+      "coding"
+    ],
+    "image": "/activity-images/activity-02.jpg"
+  },
+  {
+    "id": "activity-03",
+    "name": "Learning Math with AI",
+    "type": "Task Card",
+    "time": "20 minutes",
+    "time_minutes": 20,
+    "audience": [
+      "Student"
+    ],
+    "description": "Experience learning math with the help of an LLM",
+    "link": "https://docs.google.com/document/d/1i8BPY3XOkEUNViFEZzXt19EinpntNhFuphSQhWFzSBE/edit",
+    "category": "Learn/Teach With AI",
+    "keywords": [
+      "teach",
+      "education",
+      "classroom",
+      "student",
+      "learning",
+      "math"
+    ],
+    "image": "/activity-images/activity-03.jpg"
+  },
+  {
+    "id": "activity-04",
+    "name": "Creativity in the Age of AI",
+    "type": "Facilitator Instructions",
+    "time": "1 hour",
+    "time_minutes": 60,
+    "audience": [
+      "Teacher",
+      "Student"
+    ],
+    "description": "Read and discuss three articles about creativity and AI from the Stanford d.school",
+    "link": "https://docs.google.com/document/d/1HVtq9IDamGjF_djwOBUkVRTbosBMsZ0dO1rtL7nzzds/edit",
+    "category": "Create With AI",
+    "keywords": [
+      "create",
+      "build",
+      "make",
+      "design",
+      "game",
+      "chatbot",
+      "website",
+      "creativity"
+    ],
+    "image": "/activity-images/activity-04.jpg"
+  },
+  {
+    "id": "activity-05",
+    "name": "Design How AI Fits Your Workflow",
+    "type": "Task Card",
+    "time": "45 minutes",
+    "time_minutes": 45,
+    "audience": [
+      "Teacher"
+    ],
+    "description": "This activity introduces a structured five-stage workflow design process that helps you evaluate which parts of your work are genuinely suited for AI assistance and which should remain human-led. Rather than asking \"How do I use AI?\" the better question is \"Where does AI actually add value?\"",
+    "link": "https://docs.google.com/document/d/1AWzYTQNo8uM16QxOpLTBaixIse6wMFry/edit?usp=drive_link&ouid=112419098796256480269&rtpof=true&sd=true",
+    "category": "Thoughtful AI",
+    "keywords": [
+      "critique",
+      "evaluate",
+      "bias",
+      "ethics",
+      "critical",
+      "impact"
+    ],
+    "image": "/activity-images/activity-05.jpg"
+  },
+  {
+    "id": "activity-06",
+    "name": "Gradiants",
+    "type": "Slide Deck",
+    "time": "30 minutes",
+    "time_minutes": 30,
+    "audience": [
+      "Teacher"
+    ],
+    "description": "Map what aspects of work should/can use AI",
+    "link": "https://www.graidients.ai/v1/",
+    "category": "Learn/Teach With AI",
+    "keywords": [
+      "teach",
+      "education",
+      "classroom",
+      "student",
+      "learning"
+    ],
+    "image": "/activity-images/activity-06.jpg"
+  },
+  {
+    "id": "activity-07",
+    "name": "Teachable Machine: Pose Model",
+    "type": "Task Card",
+    "time": "30 minutes",
+    "time_minutes": 30,
+    "audience": [
+      "Student"
+    ],
+    "description": "This hands-on experience with training your own AI model reveals how machine learning works: you provide examples, the model finds patterns, and then it makes predictions on new data.",
+    "link": "https://docs.google.com/document/d/1Z0sdRHZBtllmfec2Rc9B1sH6ujNJHqyH/edit?usp=sharing&ouid=112419098796256480269&rtpof=true&sd=true",
+    "category": "Shape AI",
+    "keywords": [
+      "shape",
+      "customize",
+      "train",
+      "model",
+      "agent"
+    ],
+    "image": "/activity-images/activity-07.jpg"
+  },
+  {
+    "id": "activity-08",
+    "name": "Text to Virtual Reality",
+    "type": "Task Card",
+    "time": "30 minutes",
+    "time_minutes": 30,
+    "audience": [
+      "Student"
+    ],
+    "description": "PLAY and TINKER Go to skybox.blockadelabs.com to create 360 degree virtual worlds with simple text prompts. REFLECT How does using this tool shift your role as a creator/thinker? How could this tool be used for education, storytelling, or environmental simulations?",
+    "link": "skybox.blockadelabs.com",
+    "category": "Use AI",
+    "keywords": [
+      "use",
+      "tool",
+      "application",
+      "prompt",
+      "generate",
+      "prompting",
+      "storytelling"
+    ],
+    "image": "/activity-images/activity-08.jpg"
+  },
+  {
+    "id": "activity-09",
+    "name": "Prompting Without a Keyboard",
+    "type": "Task Card",
+    "time": "30 minutes",
+    "time_minutes": 30,
+    "audience": [
+      "Student"
+    ],
+    "description": "Explore voice-based prompting using any available voice interface. Practice \"thinking out loud\" to an AI, learn how conversational prompting differs from written prompts, and discover which tasks work best with voice interaction. By the end, you'll have developed strategies for effective voice prompting in your own context.",
+    "link": "https://docs.google.com/document/d/1P596JWnkat5OqR4p9QdOCX7TKfxj_YpE/edit",
+    "category": "Use AI",
+    "keywords": [
+      "use",
+      "tool",
+      "application",
+      "prompt",
+      "generate",
+      "chatbot",
+      "prompting"
+    ],
+    "image": "/activity-images/activity-09.jpg"
+  },
+  {
+    "id": "activity-10",
+    "name": "AI Game Creator",
+    "type": "Task Card",
+    "time": "30 minutes",
+    "time_minutes": 30,
+    "audience": [
+      "Student"
+    ],
+    "description": "AI-powered game creation tools allow you to build playable educational games by describing what you want in plain language. Platforms like Rosebud AI, Google Gemini Canvas, and Lovable lower the barrier to game development—no coding required. You can create quiz games, interactive simulations, choose-your-own-adventure stories, and more.",
+    "link": "https://docs.google.com/document/d/1a_45vs8vzJDisMhxZpb9EHdOZ3vvFig7/edit?usp=sharing&ouid=112419098796256480269&rtpof=true&sd=true",
+    "category": "Create With AI",
+    "keywords": [
+      "create",
+      "build",
+      "make",
+      "design",
+      "game",
+      "chatbot",
+      "website"
+    ],
+    "image": "/activity-images/activity-10.jpg"
+  },
+  {
+    "id": "activity-11",
+    "name": "AI or Not? (Virtual)",
+    "type": "Slide Deck",
+    "time": "15 minutes",
+    "time_minutes": 15,
+    "audience": [
+      "Teacher",
+      "Student"
+    ],
+    "description": "Sort cards into AI or Not and generalize a rule",
+    "link": "https://craft.stanford.edu/resource/ai-or-not-ai/",
+    "category": "Learn About AI",
+    "keywords": [
+      "learn",
+      "understand",
+      "fundamentals",
+      "intro"
+    ],
+    "image": "/activity-images/activity-11.jpg"
+  },
+  {
+    "id": "activity-12",
+    "name": "Prompting Lab",
+    "type": "Slide Deck",
+    "time": "30 minutes",
+    "time_minutes": 30,
+    "audience": [
+      "Teacher",
+      "Student"
+    ],
+    "description": "Experiment with structured, conversational, and meta prompting strategies",
+    "link": "https://docs.google.com/presentation/d/1_nbaYNLJSqbGPBrjW0q3z9JOjqdau7-caVzaynM-mOg/edit",
+    "category": "Use AI",
+    "keywords": [
+      "use",
+      "tool",
+      "application",
+      "prompt",
+      "generate",
+      "chatbot",
+      "prompting"
+    ],
+    "image": "/activity-images/activity-12.jpg"
+  },
+  {
+    "id": "activity-13",
+    "name": "Text to 3D Objects",
+    "type": "Task Card",
+    "time": "30 minutes",
+    "time_minutes": 30,
+    "audience": [
+      "Student"
+    ],
+    "description": "PLAY and TINKER Visit meshy.ai to input a description of the 3D object you want. Meshy will generate a model you can view, edit, and download. REFLECT How does using this tool shift your role as a creator/thinker? What new possibilities does this tool create for educators?",
+    "link": "meshy.ai",
+    "category": "Use AI",
+    "keywords": [
+      "use",
+      "tool",
+      "application",
+      "prompt",
+      "generate",
+      "3d"
+    ],
+    "image": "/activity-images/activity-13.jpg"
+  },
+  {
+    "id": "activity-14",
+    "name": "Keep Your Data Private",
+    "type": "Task Card",
+    "time": "30 minutes",
+    "time_minutes": 30,
+    "audience": [
+      "Teacher"
+    ],
+    "description": "PLAY and TINKER Host a chatbot on your laptop, entirely offline with Chatbox. REFLECT How does running AI models locally change your control over data privacy?",
+    "link": "chatboxai.app",
+    "category": "Thoughtful AI",
+    "keywords": [
+      "critique",
+      "evaluate",
+      "bias",
+      "ethics",
+      "critical",
+      "impact",
+      "chatbot",
+      "privacy"
+    ],
+    "image": "/activity-images/activity-14.jpg"
+  },
+  {
+    "id": "activity-15",
+    "name": "More than GenAI",
+    "type": "Slide Deck",
+    "time": "1 hour",
+    "time_minutes": 60,
+    "audience": [
+      "Teacher",
+      "Student"
+    ],
+    "description": "Sort AIs into groups; Build your own classifier",
+    "link": "https://docs.google.com/presentation/d/1mKF_PJEbVEqcxUG4_wuSqyMatc1wAqsCFD6G7aqYrD8/edit",
+    "category": "Learn About AI",
+    "keywords": [
+      "learn",
+      "understand",
+      "fundamentals",
+      "intro"
+    ],
+    "image": "/activity-images/activity-15.jpg"
+  },
+  {
+    "id": "activity-16",
+    "name": "AI + Storytelling",
+    "type": "Facilitator Instructions",
+    "time": "45 minutes",
+    "time_minutes": 45,
+    "audience": [
+      "Student"
+    ],
+    "description": "In this lesson, students will explore how AI can be used in storytelling including how to consider the benefits and trade-offs of incorporating AI into the storytelling process.",
+    "link": "https://craft.stanford.edu/resource/can-ai-help-with-storytelling/",
+    "category": "Learn/Teach With AI",
+    "keywords": [
+      "teach",
+      "education",
+      "classroom",
+      "student",
+      "learning",
+      "storytelling"
+    ],
+    "image": "/activity-images/activity-16.jpg"
+  },
+  {
+    "id": "activity-17",
+    "name": "LLM Learning Modes",
+    "type": "Slide Deck",
+    "time": "30 minutes",
+    "time_minutes": 30,
+    "audience": [
+      "Teacher"
+    ],
+    "description": "Compare normal mode to learning mode across LLMs",
+    "link": "https://docs.google.com/presentation/d/1e7bQQ_TdcncLjkYlr7M1YBXwuocTho-28--SIPd37ok/edit",
+    "category": "Learn/Teach With AI",
+    "keywords": [
+      "teach",
+      "education",
+      "classroom",
+      "student",
+      "learning"
+    ],
+    "image": "/activity-images/activity-17.jpg"
+  },
+  {
+    "id": "activity-18",
+    "name": "The Bookshelf - Critical AI Literacy Library",
+    "type": "Resource Guide",
+    "time": "N/A",
+    "time_minutes": null,
+    "audience": [
+      "Teacher"
+    ],
+    "description": "Curated book collection on AI and society",
+    "link": "https://docs.google.com/document/u/0/d/1PvyxI9k7TfIvzp2nY5yDD5gKJsXQ-QLMccRiYT6MYFk/edit",
+    "category": "Learn/Teach With AI",
+    "keywords": [
+      "teach",
+      "education",
+      "classroom",
+      "student",
+      "learning"
+    ],
+    "image": "/activity-images/activity-18.jpg"
+  },
+  {
+    "id": "activity-19",
+    "name": "AI Music Generator",
+    "type": "Task Card",
+    "time": "30 minutes",
+    "time_minutes": 30,
+    "audience": [
+      "Student"
+    ],
+    "description": "PLAY and TINKER Visit Suno.com to generate music in minutes. Customize tracks by selecting mood, length, and instruments to match your creative needs. REFLECT How does AI-generated music compare to human-composed music in terms of creativity and originality? If you didn't tell someone this was AI-generated, would they know? Does it matter?",
+    "link": "suno.com",
+    "category": "Use AI",
+    "keywords": [
+      "use",
+      "tool",
+      "application",
+      "prompt",
+      "generate",
+      "music",
+      "creativity"
+    ],
+    "image": "/activity-images/activity-19.jpg"
+  },
+  {
+    "id": "activity-20",
+    "name": "Instructional Materials GenAI",
+    "type": "Task Card",
+    "time": "45 minutes",
+    "time_minutes": 45,
+    "audience": [
+      "Teacher"
+    ],
+    "description": "Create an instructional material to meet a learning objective",
+    "link": "https://docs.google.com/document/d/1SsPuM45IlhBzIP8HeDfja2prgEYZhaWV2M7cLgpHTHw/edit",
+    "category": "Learn/Teach With AI",
+    "keywords": [
+      "teach",
+      "education",
+      "classroom",
+      "student",
+      "learning"
+    ],
+    "image": "/activity-images/activity-20.jpg"
+  },
+  {
+    "id": "activity-21",
+    "name": "Quickdraw",
+    "type": "Task Card",
+    "time": "30 minutes",
+    "time_minutes": 30,
+    "audience": [
+      "Student"
+    ],
+    "description": "Players sketch doodles while a neural network tries to guess what they're drawing in real time. A fun, hands-on way to experience how machine learning models recognize patterns and learn from data.",
+    "link": "https://drive.google.com/file/d/1plLvNv7_amjyMSEpEbpvwtZmQecaYK0K/view",
+    "category": "Learn About AI",
+    "keywords": [
+      "learn",
+      "understand",
+      "fundamentals",
+      "intro"
+    ],
+    "image": "/activity-images/activity-21.jpg"
+  },
+  {
+    "id": "activity-22",
+    "name": "Working Groups Facilitator Guide",
+    "type": "Resource Guide",
+    "time": "N/A",
+    "time_minutes": null,
+    "audience": [
+      "Teacher"
+    ],
+    "description": "Facilitation guide for running multi-session working groups",
+    "link": "https://docs.google.com/document/u/0/d/1CMUrShHJ8d91PNdwRuuc5-K1PkDtydIGDnFKz3LJrOY/edit",
+    "category": "Use AI",
+    "keywords": [
+      "use",
+      "tool",
+      "application",
+      "prompt",
+      "generate"
+    ],
+    "image": "/activity-images/activity-22.jpg"
+  },
+  {
+    "id": "activity-23",
+    "name": "AI + Education Resource Repository",
+    "type": "Resource Guide",
+    "time": "N/A",
+    "time_minutes": null,
+    "audience": [
+      "Teacher"
+    ],
+    "description": "Explore curated research and frameworks on AI in education",
+    "link": "https://docs.google.com/document/d/1WpvoOuOQHQEHU7gGiQCAyFQiJP0l173DPWMmukg1AcE/edit",
+    "category": "Learn About AI",
+    "keywords": [
+      "learn",
+      "understand",
+      "fundamentals",
+      "intro",
+      "research"
+    ],
+    "image": "/activity-images/activity-23.jpg"
+  },
+  {
+    "id": "activity-24",
+    "name": "Curiosity Boards - Resource Guide",
+    "type": "Resource Guide",
+    "time": "N/A",
+    "time_minutes": null,
+    "audience": [
+      "Teacher"
+    ],
+    "description": "Visual interactive installations for AI exploration",
+    "link": "https://docs.google.com/document/u/0/d/1cibLKLnawCDsUFNLYMwE0_vcqu78VBYc5sNy0x1jaLM/edit",
+    "category": "Learn/Teach With AI",
+    "keywords": [
+      "teach",
+      "education",
+      "classroom",
+      "student",
+      "learning",
+      "images"
+    ],
+    "image": "/activity-images/activity-24.jpg"
+  },
+  {
+    "id": "activity-25",
+    "name": "Create and Edit Images",
+    "type": "Task Card",
+    "time": "30 minutes",
+    "time_minutes": 30,
+    "audience": [
+      "Student"
+    ],
+    "description": "PLAY and TINKER Visit canva.com to experiment with AI-powered features like text-to-image, background remover, and magic resize to create custom educational materials effortlessly.",
+    "link": "canva.com",
+    "category": "Use AI",
+    "keywords": [
+      "use",
+      "tool",
+      "application",
+      "prompt",
+      "generate",
+      "images"
+    ],
+    "image": "/activity-images/activity-25.jpg"
+  },
+  {
+    "id": "activity-26",
+    "name": "Prompting Environmental Impact",
+    "type": "Task Card",
+    "time": "30 minutes",
+    "time_minutes": 30,
+    "audience": [
+      "Student"
+    ],
+    "description": "Practice structuring and revising prompts for environmental efficiency without losing effectiveness or quality of the output.",
+    "link": "https://docs.google.com/document/d/1TZT-0s6SUqeAyaGb6Xrh74XAdlhF2bFF_rSO04xoP5g/edit?usp=sharing",
+    "category": "Thoughtful AI",
+    "keywords": [
+      "critique",
+      "evaluate",
+      "bias",
+      "ethics",
+      "critical",
+      "impact",
+      "prompting"
+    ],
+    "image": "/activity-images/activity-26.jpg"
+  },
+  {
+    "id": "activity-27",
+    "name": "Deep Research",
+    "type": "Image",
+    "time": "15 minutes",
+    "time_minutes": 15,
+    "audience": [
+      "Teacher",
+      "Student"
+    ],
+    "description": "Use the Deep Research functionality in ChatGPT",
+    "link": "https://drive.google.com/file/d/1UlhX-aRDbQsXZEkT1z8Y-EFZDPSXunlt/view",
+    "category": "Use AI",
+    "keywords": [
+      "use",
+      "tool",
+      "application",
+      "prompt",
+      "generate",
+      "research"
+    ],
+    "image": "/activity-images/activity-27.jpg"
+  },
+  {
+    "id": "activity-28",
+    "name": "Brainstorming AI Use Cases",
+    "type": "Slide Deck",
+    "time": "15 minutes",
+    "time_minutes": 15,
+    "audience": [
+      "Teacher",
+      "Student"
+    ],
+    "description": "Brainstorm AI use cases by role/context; Risk vs Reward Map",
+    "link": "https://docs.google.com/presentation/d/1y9KGDG_kqMfMZwz9ijh_DlMOjxBtMEy2B49j9UXqx8c/edit",
+    "category": "Learn/Teach With AI",
+    "keywords": [
+      "teach",
+      "education",
+      "classroom",
+      "student",
+      "learning"
+    ],
+    "image": "/activity-images/activity-28.jpg"
+  },
+  {
+    "id": "activity-29",
+    "name": "AI Quests",
+    "type": "Facilitator Instructions",
+    "time": "45 minutes",
+    "time_minutes": 45,
+    "audience": [
+      "Student"
+    ],
+    "description": "This resource is based on AI Quests, a game-based learning experience designed to teach middle school students (ages 11-14) about AI",
+    "link": "https://craft.stanford.edu/resource/how-can-ai-help-a-community-prepare-for-a-flood/",
+    "category": "Learn/Teach With AI",
+    "keywords": [
+      "teach",
+      "education",
+      "classroom",
+      "student",
+      "learning",
+      "game"
+    ],
+    "image": "/activity-images/activity-29.jpg"
+  },
+  {
+    "id": "activity-30",
+    "name": "Vibe Code a Website",
+    "type": "Task Card",
+    "time": "30 minutes",
+    "time_minutes": 30,
+    "audience": [
+      "Teacher"
+    ],
+    "description": "Step-by-step guide to deploy a vibe coded tool",
+    "link": "https://docs.google.com/document/d/1Kl3G3DP1_7Gl5HpMl_5QrXallxb9sKoBz2I3qaySpbA/edit",
+    "category": "Create With AI",
+    "keywords": [
+      "create",
+      "build",
+      "make",
+      "design",
+      "game",
+      "chatbot",
+      "website",
+      "coding"
+    ],
+    "image": "/activity-images/activity-30.jpg"
+  },
+  {
+    "id": "activity-31",
+    "name": "Feedback & Assessments with AI",
+    "type": "Slide Deck",
+    "time": "30 minutes",
+    "time_minutes": 30,
+    "audience": [
+      "Teacher"
+    ],
+    "description": "Set up ChatGPT to provide feedback on student work",
+    "link": "https://docs.google.com/presentation/d/1Mz0jUSYyeK3OunjA3TG53cH9dRe4NpCapcxNAAf1CtM/edit",
+    "category": "Learn/Teach With AI",
+    "keywords": [
+      "teach",
+      "education",
+      "classroom",
+      "student",
+      "learning"
+    ],
+    "image": "/activity-images/activity-31.jpg"
+  },
+  {
+    "id": "activity-32",
+    "name": "Literature Review Strategy with GenAI",
+    "type": "Task Card",
+    "time": "15 minutes",
+    "time_minutes": 15,
+    "audience": [
+      "Student"
+    ],
+    "description": "Use AI to assist with the literature review process",
+    "link": "https://docs.google.com/document/u/0/d/1SwHCjFkJlHNHBH848Ey9lARpH9e3b75tqnTFnqZrGac/edit",
+    "category": "Use AI",
+    "keywords": [
+      "use",
+      "tool",
+      "application",
+      "prompt",
+      "generate"
+    ],
+    "image": "/activity-images/activity-32.jpg"
+  },
+  {
+    "id": "activity-33",
+    "name": "Evaluating GenAI Images",
+    "type": "Task Card",
+    "time": "1 hour",
+    "time_minutes": 60,
+    "audience": [
+      "Teacher",
+      "Student"
+    ],
+    "description": "Create AI images and evaluate them for stereotypes and biases",
+    "link": "https://docs.google.com/document/d/1newdAI7kplwf7LiPFuwkjGMQPn9DOb5IuX5C022c7jc/edit",
+    "category": "Thoughtful AI",
+    "keywords": [
+      "critique",
+      "evaluate",
+      "bias",
+      "ethics",
+      "critical",
+      "impact",
+      "images"
+    ],
+    "image": "/activity-images/activity-33.jpg"
+  },
+  {
+    "id": "activity-34",
+    "name": "Meta-prompting",
+    "type": "Task Card",
+    "time": "30 minutes",
+    "time_minutes": 30,
+    "audience": [
+      "Student"
+    ],
+    "description": "Meta-prompting is the practice of using an chatbot to design, refine, and optimize prompts. This process helps improve your results and teaches you how to use AI more effectively.",
+    "link": "https://docs.google.com/document/d/1chUWs6xPlJjm_yxLVZNmGauoISGgIcWwgV6JptEESyQ/edit?usp=sharing",
+    "category": "Use AI",
+    "keywords": [
+      "use",
+      "tool",
+      "application",
+      "prompt",
+      "generate",
+      "chatbot",
+      "prompting"
+    ],
+    "image": "/activity-images/activity-34.jpg"
+  },
+  {
+    "id": "activity-35",
+    "name": "DIY Agent with Zapier Agents",
+    "type": "Task Card",
+    "time": "30 minutes",
+    "time_minutes": 30,
+    "audience": [
+      "Student"
+    ],
+    "description": "Design an agent that handles birthdays for a teacher",
+    "link": "https://docs.google.com/document/d/19JD2DBldUBDQ0SqASOtA8_7q5tE5XlNrRU9Zitv2SCA/edit",
+    "category": "Shape AI",
+    "keywords": [
+      "shape",
+      "customize",
+      "train",
+      "model",
+      "agent"
+    ],
+    "image": "/activity-images/activity-35.jpg"
+  },
+  {
+    "id": "activity-36",
+    "name": "Fact checking AI",
+    "type": "Facilitator Instructions",
+    "time": "1 hour",
+    "time_minutes": 60,
+    "audience": [
+      "Student"
+    ],
+    "description": "In this lesson, we’ll introduce students to the skill of lateral reading (Wineburg & McGrew, 2017) as one approach to fact-checking the information they get from AI.",
+    "link": "https://craft.stanford.edu/resource/how-do-i-fact-check-ai-search-results/",
+    "category": "Thoughtful AI",
+    "keywords": [
+      "critique",
+      "evaluate",
+      "bias",
+      "ethics",
+      "critical",
+      "impact",
+      "fact-checking"
+    ],
+    "image": "/activity-images/activity-36.jpg"
+  },
+  {
+    "id": "activity-37",
+    "name": "Ethical AI use",
+    "type": "Facilitator Instructions",
+    "time": "1 hour",
+    "time_minutes": 60,
+    "audience": [
+      "Student"
+    ],
+    "description": "Explore ethical considerations around AI use, including issues of bias, fairness, privacy, and responsible deployment of AI systems.",
+    "link": "https://craft.stanford.edu/resource/",
+    "category": "Thoughtful AI",
+    "keywords": [
+      "ethics",
+      "responsible",
+      "bias",
+      "fairness",
+      "privacy",
+      "impact",
+      "thoughtful"
+    ],
+    "image": "/activity-images/activity-37.jpg"
+  }
+]
