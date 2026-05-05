@@ -20,7 +20,8 @@
       "chatbot",
       "website"
     ],
-    "image": "/activity-images/activity-01.jpg"
+    "image": "/activity-images/activity-01.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-02",
@@ -41,7 +42,8 @@
       "intro",
       "coding"
     ],
-    "image": "/activity-images/activity-02.jpg"
+    "image": "/activity-images/activity-02.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-03",
@@ -63,7 +65,8 @@
       "learning",
       "math"
     ],
-    "image": "/activity-images/activity-03.jpg"
+    "image": "/activity-images/activity-03.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-04",
@@ -88,7 +91,8 @@
       "website",
       "creativity"
     ],
-    "image": "/activity-images/activity-04.jpg"
+    "image": "/activity-images/activity-04.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-05",
@@ -110,7 +114,8 @@
       "critical",
       "impact"
     ],
-    "image": "/activity-images/activity-05.jpg"
+    "image": "/activity-images/activity-05.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-06",
@@ -131,7 +136,8 @@
       "student",
       "learning"
     ],
-    "image": "/activity-images/activity-06.jpg"
+    "image": "/activity-images/activity-06.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-07",
@@ -152,7 +158,8 @@
       "model",
       "agent"
     ],
-    "image": "/activity-images/activity-07.jpg"
+    "image": "/activity-images/activity-07.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-08",
@@ -175,7 +182,8 @@
       "prompting",
       "storytelling"
     ],
-    "image": "/activity-images/activity-08.jpg"
+    "image": "/activity-images/activity-08.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-09",
@@ -198,7 +206,8 @@
       "chatbot",
       "prompting"
     ],
-    "image": "/activity-images/activity-09.jpg"
+    "image": "/activity-images/activity-09.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-10",
@@ -209,7 +218,7 @@
     "audience": [
       "Student"
     ],
-    "description": "AI-powered game creation tools allow you to build playable educational games by describing what you want in plain language. Platforms like Rosebud AI, Google Gemini Canvas, and Lovable lower the barrier to game development—no coding required. You can create quiz games, interactive simulations, choose-your-own-adventure stories, and more.",
+    "description": "AI-powered game creation tools allow you to build playable educational games by describing what you want in plain language. Platforms like Rosebud AI, Google Gemini Canvas, and Lovable lower the barrier to game development\u2014no coding required. You can create quiz games, interactive simulations, choose-your-own-adventure stories, and more.",
     "link": "https://docs.google.com/document/d/1a_45vs8vzJDisMhxZpb9EHdOZ3vvFig7/copy",
     "category": "Use AI",
     "keywords": [
@@ -221,7 +230,8 @@
       "chatbot",
       "website"
     ],
-    "image": "/activity-images/activity-10.jpg"
+    "image": "/activity-images/activity-10.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-11",
@@ -242,7 +252,8 @@
       "fundamentals",
       "intro"
     ],
-    "image": "/activity-images/activity-11.jpg"
+    "image": "/activity-images/activity-11.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-12",
@@ -266,7 +277,8 @@
       "chatbot",
       "prompting"
     ],
-    "image": "/activity-images/activity-12.jpg"
+    "image": "/activity-images/activity-12.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-13",
@@ -288,7 +300,8 @@
       "generate",
       "3d"
     ],
-    "image": "/activity-images/activity-13.jpg"
+    "image": "/activity-images/activity-13.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-14",
@@ -312,7 +325,8 @@
       "chatbot",
       "privacy"
     ],
-    "image": "/activity-images/activity-14.jpg"
+    "image": "/activity-images/activity-14.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-15",
@@ -333,7 +347,8 @@
       "fundamentals",
       "intro"
     ],
-    "image": "/activity-images/activity-15.jpg"
+    "image": "/activity-images/activity-15.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-16",
@@ -355,7 +370,8 @@
       "learning",
       "storytelling"
     ],
-    "image": "/activity-images/activity-16.jpg"
+    "image": "/activity-images/activity-16.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-17",
@@ -376,7 +392,8 @@
       "student",
       "learning"
     ],
-    "image": "/activity-images/activity-17.jpg"
+    "image": "/activity-images/activity-17.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-18",
@@ -397,7 +414,8 @@
       "student",
       "learning"
     ],
-    "image": "/activity-images/activity-18.jpg"
+    "image": "/activity-images/activity-18.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-19",
@@ -420,7 +438,8 @@
       "music",
       "creativity"
     ],
-    "image": "/activity-images/activity-19.jpg"
+    "image": "/activity-images/activity-19.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-20",
@@ -441,7 +460,8 @@
       "student",
       "learning"
     ],
-    "image": "/activity-images/activity-20.jpg"
+    "image": "/activity-images/activity-20.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-21",
@@ -461,7 +481,8 @@
       "fundamentals",
       "intro"
     ],
-    "image": "/activity-images/activity-21.jpg"
+    "image": "/activity-images/activity-21.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-22",
@@ -482,7 +503,8 @@
       "prompt",
       "generate"
     ],
-    "image": "/activity-images/activity-22.jpg"
+    "image": "/activity-images/activity-22.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-23",
@@ -503,7 +525,8 @@
       "intro",
       "research"
     ],
-    "image": "/activity-images/activity-23.jpg"
+    "image": "/activity-images/activity-23.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-24",
@@ -525,7 +548,8 @@
       "learning",
       "images"
     ],
-    "image": "/activity-images/activity-24.jpg"
+    "image": "/activity-images/activity-24.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-25",
@@ -547,7 +571,8 @@
       "generate",
       "images"
     ],
-    "image": "/activity-images/activity-25.jpg"
+    "image": "/activity-images/activity-25.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-26",
@@ -570,7 +595,8 @@
       "impact",
       "prompting"
     ],
-    "image": "/activity-images/activity-26.jpg"
+    "image": "/activity-images/activity-26.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-27",
@@ -593,7 +619,8 @@
       "generate",
       "research"
     ],
-    "image": "/activity-images/activity-27.jpg"
+    "image": "/activity-images/activity-27.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-28",
@@ -615,7 +642,8 @@
       "student",
       "learning"
     ],
-    "image": "/activity-images/activity-28.jpg"
+    "image": "/activity-images/activity-28.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-29",
@@ -637,7 +665,8 @@
       "learning",
       "game"
     ],
-    "image": "/activity-images/activity-29.jpg"
+    "image": "/activity-images/activity-29.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-30",
@@ -661,7 +690,8 @@
       "website",
       "coding"
     ],
-    "image": "/activity-images/activity-30.jpg"
+    "image": "/activity-images/activity-30.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-31",
@@ -682,7 +712,8 @@
       "student",
       "learning"
     ],
-    "image": "/activity-images/activity-31.jpg"
+    "image": "/activity-images/activity-31.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-32",
@@ -703,7 +734,8 @@
       "prompt",
       "generate"
     ],
-    "image": "/activity-images/activity-32.jpg"
+    "image": "/activity-images/activity-32.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-33",
@@ -727,7 +759,8 @@
       "impact",
       "images"
     ],
-    "image": "/activity-images/activity-33.jpg"
+    "image": "/activity-images/activity-33.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-34",
@@ -750,7 +783,8 @@
       "chatbot",
       "prompting"
     ],
-    "image": "/activity-images/activity-34.jpg"
+    "image": "/activity-images/activity-34.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-35",
@@ -771,7 +805,8 @@
       "model",
       "agent"
     ],
-    "image": "/activity-images/activity-35.jpg"
+    "image": "/activity-images/activity-35.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-36",
@@ -782,7 +817,7 @@
     "audience": [
       "Student"
     ],
-    "description": "In this lesson, we’ll introduce students to the skill of lateral reading (Wineburg & McGrew, 2017) as one approach to fact-checking the information they get from AI.",
+    "description": "In this lesson, we\u2019ll introduce students to the skill of lateral reading (Wineburg & McGrew, 2017) as one approach to fact-checking the information they get from AI.",
     "link": "https://craft.stanford.edu/resource/how-do-i-fact-check-ai-search-results/",
     "category": "Evaluate AI",
     "keywords": [
@@ -794,7 +829,8 @@
       "impact",
       "fact-checking"
     ],
-    "image": "/activity-images/activity-36.jpg"
+    "image": "/activity-images/activity-36.jpg",
+    "created_by": ""
   },
   {
     "id": "activity-37",
@@ -817,6 +853,7 @@
       "impact",
       "thoughtful"
     ],
-    "image": "/activity-images/activity-37.jpg"
+    "image": "/activity-images/activity-37.jpg",
+    "created_by": ""
   }
 ]

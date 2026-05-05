@@ -9,11 +9,12 @@ Usage:
     AIRTABLE_PAT=patXXXX python3 scripts/sync-airtable.py [--dry-run]
 
 Reads:
-    Airtable base `appEUXFXlnxrxY4OG`, table `Activities`, fields `Name` and
-    `Gallery Image`.
+    Airtable base `appEUXFXlnxrxY4OG`, table `Activities`, fields `Name`,
+    `Gallery Image`, and `Created By`.
 
 Writes:
-    activities.json — only the `image` field is updated, matched by `name`.
+    activities.json — the `image` and `created_by` fields are updated,
+    matched by `name`.
 
 Rationale:
     The original project rewrote index.html at boot with a regex (fragile,
@@ -38,12 +39,16 @@ ROOT = Path(__file__).resolve().parent.parent
 ACTIVITIES_JSON = ROOT / 'activities.json'
 
 
-def fetch_airtable(token: str) -> dict[str, str]:
-    """Return a {name: gallery_image_url} map from Airtable."""
+def fetch_airtable(token: str) -> dict[str, dict]:
+    """Return a {name: {image, created_by}} map from Airtable.
+
+    `created_by` is a custom text field (Airtable's auto field is ignored).
+    Falls back to '' when absent. Image is the first Gallery Image URL or ''.
+    """
     records: list[dict] = []
     offset = None
     while True:
-        params = {'fields[]': ['Name', 'Gallery Image']}
+        params = {'fields[]': ['Name', 'Gallery Image', 'Created By']}
         qs = urllib.parse.urlencode(params, doseq=True)
         url = f'https://api.airtable.com/v0/{AIRTABLE_BASE}/{AIRTABLE_TABLE}?{qs}'
         if offset:
@@ -56,14 +61,33 @@ def fetch_airtable(token: str) -> dict[str, str]:
         if not offset:
             break
 
-    image_map: dict[str, str] = {}
+    out: dict[str, dict] = {}
     for rec in records:
         fields = rec.get('fields') or {}
         name = (fields.get('Name') or '').strip()
+        if not name:
+            continue
         gallery = fields.get('Gallery Image') or []
-        if name and gallery and gallery[0].get('url'):
-            image_map[name] = gallery[0]['url']
-    return image_map
+        image = gallery[0]['url'] if gallery and gallery[0].get('url') else ''
+        # `Created By` may be a single-line text, multi-line text, or array of
+        # collaborators. Normalize to a comma-joined string of names.
+        cb_raw = fields.get('Created By')
+        if isinstance(cb_raw, str):
+            created_by = cb_raw.strip()
+        elif isinstance(cb_raw, list):
+            parts = []
+            for item in cb_raw:
+                if isinstance(item, dict):
+                    parts.append((item.get('name') or item.get('email') or '').strip())
+                elif isinstance(item, str):
+                    parts.append(item.strip())
+            created_by = ', '.join(p for p in parts if p)
+        elif isinstance(cb_raw, dict):
+            created_by = (cb_raw.get('name') or cb_raw.get('email') or '').strip()
+        else:
+            created_by = ''
+        out[name] = {'image': image, 'created_by': created_by}
+    return out
 
 
 def main() -> int:
@@ -82,30 +106,43 @@ def main() -> int:
         return 2
 
     activities = json.loads(ACTIVITIES_JSON.read_text())
-    image_map = fetch_airtable(token)
+    airtable = fetch_airtable(token)
 
-    changed = 0
+    image_changes = 0
+    creator_changes = 0
     unknown: list[str] = []
+
     for a in activities:
-        new_url = image_map.get(a['name'])
-        if new_url and new_url != a.get('image'):
-            print(f"  {a['id']}  {a['name']!r}\n      {a.get('image')}\n   -> {new_url}")
+        rec = airtable.get(a['name'])
+        if not rec:
+            continue
+        new_image = rec['image']
+        new_creator = rec['created_by']
+        if new_image and new_image != a.get('image'):
+            print(f"  IMAGE  {a['id']}  {a['name']!r}\n      {a.get('image')}\n   -> {new_image}")
             if not args.dry_run:
-                a['image'] = new_url
-            changed += 1
-    for name in image_map:
+                a['image'] = new_image
+            image_changes += 1
+        if new_creator != (a.get('created_by') or ''):
+            print(f"  AUTHOR {a['id']}  {a['name']!r}\n      {a.get('created_by') or '(empty)'!r} -> {new_creator!r}")
+            if not args.dry_run:
+                a['created_by'] = new_creator
+            creator_changes += 1
+
+    for name in airtable:
         if not any(a['name'] == name for a in activities):
             unknown.append(name)
 
     print()
-    print(f'Airtable records with images: {len(image_map)}')
-    print(f'Activities updated:           {changed}')
+    print(f'Airtable records:        {len(airtable)}')
+    print(f'Image URLs updated:      {image_changes}')
+    print(f'Created-by values updated: {creator_changes}')
     if unknown:
         print(f'Airtable names not in activities.json ({len(unknown)}):')
         for n in unknown:
             print(f'  - {n}')
 
-    if changed and not args.dry_run:
+    if (image_changes or creator_changes) and not args.dry_run:
         ACTIVITIES_JSON.write_text(json.dumps(activities, indent=2) + '\n')
         print(f'Wrote {ACTIVITIES_JSON}')
     elif args.dry_run:

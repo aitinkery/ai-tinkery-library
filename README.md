@@ -23,7 +23,7 @@ same content, same brand, different shape.
 | `backend.gs` | Google Apps Script: calls Anthropic's API; returns structured JSON `{text, suggestions, activityIds}`. |
 | `manifest.json`, `sw.js` | PWA shell; network-first for HTML + `activities.json`. |
 | `images/`, `activity-images/` | Logos, PWA icons, and the 38 activity card images. |
-| `scripts/sync-airtable.py` | Opt-in script to refresh image URLs from Airtable. **Never runs at server boot.** |
+| `scripts/sync-airtable.py` | Opt-in script to refresh image URLs and `created_by` from Airtable. **Never runs at server boot.** |
 | `main.py`, `pyproject.toml`, `.replit` | Replit-friendly entry points. |
 
 ## Running locally
@@ -63,15 +63,21 @@ the user's saved list.
 3. Deploy as a Web App (executable as *you*, accessible by *anyone*).
 4. Point `CLAUDE_BACKEND_URL` in `server.py` at the deployment URL.
 
-## Syncing activity images from Airtable
+## Syncing activity metadata from Airtable
 
 ```bash
 AIRTABLE_PAT=patXXXX python3 scripts/sync-airtable.py --dry-run
 AIRTABLE_PAT=patXXXX python3 scripts/sync-airtable.py
 ```
 
-The script only updates `image` fields in `activities.json`, matched by name.
-Commit the diff if you want the change to stick.
+The script reads the `Name`, `Gallery Image`, and `Created By` fields from
+Airtable and updates the matching `image` and `created_by` fields in
+`activities.json`. Match key is `Name`. Commit the diff if you want the
+change to stick.
+
+The Created-By filter row in the UI is built dynamically from whatever
+values are present in `activities.json` — hidden if all are blank, otherwise
+one chip per distinct creator (alphabetical).
 
 ## Design notes
 
