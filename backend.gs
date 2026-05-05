@@ -22,16 +22,16 @@ const CLAUDE_MODEL   = 'claude-3-5-sonnet-20241022';
 // Keep in sync with activities.json. One line per activity:
 //   id: name | category | time | audience | short description
 const ACTIVITY_CATALOG = `
-activity-01: Build-a-Bot | Create With AI | 45 minutes | Teacher | Create a custom chatbot using bot101.app
+activity-01: Build-a-Bot | Use AI | 45 minutes | Teacher | Create a custom chatbot using bot101.app
 activity-02: I Love Algorithms Card Game | Understand AI | 45 minutes | Student | Machine-learning card game, no code or screens
 activity-03: Learning Math with AI | Learn/Teach With AI | 20 minutes | Student | Learn math with the help of an LLM
-activity-04: Creativity in the Age of AI | Create With AI | 1 hour | Teacher+Student | Read and discuss three d.school articles on AI and creativity
+activity-04: Creativity in the Age of AI | Understand AI | 1 hour | Teacher+Student | Read and discuss three d.school articles on AI and creativity
 activity-05: Design How AI Fits Your Workflow | Evaluate AI | 45 minutes | Teacher | Five-stage workflow design: where does AI actually add value
 activity-06: Gradiants | Learn/Teach With AI | 30 minutes | Teacher | Map what aspects of work should/can use AI
 activity-07: Teachable Machine: Pose Model | Shape AI | 30 minutes | Student | Train your own pose-recognition AI model; see how ML works
 activity-08: Text to Virtual Reality | Use AI | 30 minutes | Student | Use skybox.blockadelabs.com to generate 360° worlds from text
 activity-09: Prompting Without a Keyboard | Use AI | 30 minutes | Student | Voice-based prompting; think-out-loud with an LLM
-activity-10: AI Game Creator | Create With AI | 30 minutes | Student | Build playable educational games from plain-language descriptions
+activity-10: AI Game Creator | Use AI | 30 minutes | Student | Build playable educational games from plain-language descriptions
 activity-11: AI or Not? (Virtual) | Understand AI | 15 minutes | Teacher+Student | Sort cards into AI or not; generalize a rule
 activity-12: Prompting Lab | Use AI | 30 minutes | Teacher+Student | Experiment with structured, conversational, meta prompting
 activity-13: Text to 3D Objects | Use AI | 30 minutes | Student | Use meshy.ai to generate 3D models from text
@@ -51,7 +51,7 @@ activity-26: Prompting Environmental Impact | Evaluate AI | 30 minutes | Student
 activity-27: Deep Research | Use AI | 15 minutes | Teacher+Student | Use the Deep Research functionality in ChatGPT
 activity-28: Brainstorming AI Use Cases | Learn/Teach With AI | 15 minutes | Teacher+Student | Brainstorm AI use cases by role; risk vs reward map
 activity-29: AI Quests | Learn/Teach With AI | 45 minutes | Student | Game-based AI learning for middle schoolers (ages 11–14)
-activity-30: Vibe Code a Website | Create With AI | 30 minutes | Teacher | Step-by-step guide to deploy a vibe-coded tool
+activity-30: Vibe Code a Website | Use AI | 30 minutes | Teacher | Step-by-step guide to deploy a vibe-coded tool
 activity-31: Feedback & Assessments with AI | Learn/Teach With AI | 30 minutes | Teacher | Set up ChatGPT to provide feedback on student work
 activity-32: Literature Review Strategy with GenAI | Use AI | 15 minutes | Student | Use AI to assist the literature review process
 activity-33: Evaluating GenAI Images | Evaluate AI | 1 hour | Teacher+Student | Create AI images; evaluate for stereotypes and bias
@@ -72,7 +72,7 @@ const SYSTEM_CONTEXT = `You are the guide for the Stanford AI Tinkery **Activity
 4. Thoughtful — AI is a system to be questioned and shaped
 
 **Categories used by the library:**
-Understand AI · Use AI · Create With AI · Learn/Teach With AI · Shape AI · Evaluate AI
+Understand AI · Use AI · Learn/Teach With AI · Shape AI · Evaluate AI
 
 **Activities you can recommend (use the id, e.g. "activity-07"):**
 ${ACTIVITY_CATALOG}
