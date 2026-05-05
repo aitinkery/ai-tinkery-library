@@ -70,7 +70,7 @@ AIRTABLE_PAT=patXXXX python3 scripts/sync-airtable.py --dry-run
 AIRTABLE_PAT=patXXXX python3 scripts/sync-airtable.py
 ```
 
-The script reads the `Name`, `Gallery Image`, and `Created By` fields from
+The script reads the `Name`, `Gallery Image`, and `Created by` fields from
 Airtable and updates the matching `image` and `created_by` fields in
 `activities.json`. Match key is `Name`. Commit the diff if you want the
 change to stick.

@@ -10,7 +10,7 @@ Usage:
 
 Reads:
     Airtable base `appEUXFXlnxrxY4OG`, table `Activities`, fields `Name`,
-    `Gallery Image`, and `Created By`.
+    `Gallery Image`, and `Created by`.
 
 Writes:
     activities.json — the `image` and `created_by` fields are updated,
@@ -48,7 +48,7 @@ def fetch_airtable(token: str) -> dict[str, dict]:
     records: list[dict] = []
     offset = None
     while True:
-        params = {'fields[]': ['Name', 'Gallery Image', 'Created By']}
+        params = {'fields[]': ['Name', 'Gallery Image', 'Created by']}
         qs = urllib.parse.urlencode(params, doseq=True)
         url = f'https://api.airtable.com/v0/{AIRTABLE_BASE}/{AIRTABLE_TABLE}?{qs}'
         if offset:
@@ -71,7 +71,7 @@ def fetch_airtable(token: str) -> dict[str, dict]:
         image = gallery[0]['url'] if gallery and gallery[0].get('url') else ''
         # `Created By` may be a single-line text, multi-line text, or array of
         # collaborators. Normalize to a comma-joined string of names.
-        cb_raw = fields.get('Created By')
+        cb_raw = fields.get('Created by')
         if isinstance(cb_raw, str):
             created_by = cb_raw.strip()
         elif isinstance(cb_raw, list):
