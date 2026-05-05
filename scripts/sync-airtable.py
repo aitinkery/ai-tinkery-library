@@ -133,10 +133,20 @@ def main() -> int:
         if not any(a['name'] == name for a in activities):
             unknown.append(name)
 
+    # Diagnostic: how many Airtable records actually had a non-empty
+    # `Created by` value. Helps catch "silent zero" cases where the field
+    # name is wrong or the column is empty.
+    creators_seen = sum(1 for v in airtable.values() if v.get('created_by'))
+
     print()
-    print(f'Airtable records:        {len(airtable)}')
-    print(f'Image URLs updated:      {image_changes}')
-    print(f'Created-by values updated: {creator_changes}')
+    print(f'Airtable records fetched:    {len(airtable)}')
+    print(f'  with non-empty `Created by`: {creators_seen}')
+    print(f'Image URLs updated:          {image_changes}')
+    print(f'Created-by values updated:   {creator_changes}')
+    if len(airtable) > 0 and creators_seen == 0:
+        print('warning: zero records had a non-empty `Created by` value.', file=sys.stderr)
+        print('         Verify the field name in Airtable matches exactly,', file=sys.stderr)
+        print('         or that values are populated.', file=sys.stderr)
     if unknown:
         print(f'Airtable names not in activities.json ({len(unknown)}):')
         for n in unknown:
