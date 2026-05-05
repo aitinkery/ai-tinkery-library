@@ -33,7 +33,7 @@
     ],
     "description": "PLAY and TINKER Go to the website and explore a hands-on resource for understanding machine learning without needing any code or screens.",
     "link": "https://dschool.stanford.edu/tools/i-love-algorithms-machineless-machine-learning",
-    "category": "Learn About AI",
+    "category": "Understand AI",
     "keywords": [
       "learn",
       "understand",
@@ -101,7 +101,7 @@
     ],
     "description": "This activity introduces a structured five-stage workflow design process that helps you evaluate which parts of your work are genuinely suited for AI assistance and which should remain human-led. Rather than asking \"How do I use AI?\" the better question is \"Where does AI actually add value?\"",
     "link": "https://docs.google.com/document/d/1AWzYTQNo8uM16QxOpLTBaixIse6wMFry/edit?usp=drive_link&ouid=112419098796256480269&rtpof=true&sd=true",
-    "category": "Thoughtful AI",
+    "category": "Evaluate AI",
     "keywords": [
       "critique",
       "evaluate",
@@ -235,7 +235,7 @@
     ],
     "description": "Sort cards into AI or Not and generalize a rule",
     "link": "https://craft.stanford.edu/resource/ai-or-not-ai/",
-    "category": "Learn About AI",
+    "category": "Understand AI",
     "keywords": [
       "learn",
       "understand",
@@ -301,7 +301,7 @@
     ],
     "description": "PLAY and TINKER Host a chatbot on your laptop, entirely offline with Chatbox. REFLECT How does running AI models locally change your control over data privacy?",
     "link": "chatboxai.app",
-    "category": "Thoughtful AI",
+    "category": "Evaluate AI",
     "keywords": [
       "critique",
       "evaluate",
@@ -326,7 +326,7 @@
     ],
     "description": "Sort AIs into groups; Build your own classifier",
     "link": "https://docs.google.com/presentation/d/1mKF_PJEbVEqcxUG4_wuSqyMatc1wAqsCFD6G7aqYrD8/edit",
-    "category": "Learn About AI",
+    "category": "Understand AI",
     "keywords": [
       "learn",
       "understand",
@@ -454,7 +454,7 @@
     ],
     "description": "Players sketch doodles while a neural network tries to guess what they're drawing in real time. A fun, hands-on way to experience how machine learning models recognize patterns and learn from data.",
     "link": "https://drive.google.com/file/d/1plLvNv7_amjyMSEpEbpvwtZmQecaYK0K/view",
-    "category": "Learn About AI",
+    "category": "Understand AI",
     "keywords": [
       "learn",
       "understand",
@@ -495,7 +495,7 @@
     ],
     "description": "Explore curated research and frameworks on AI in education",
     "link": "https://docs.google.com/document/d/1WpvoOuOQHQEHU7gGiQCAyFQiJP0l173DPWMmukg1AcE/edit",
-    "category": "Learn About AI",
+    "category": "Understand AI",
     "keywords": [
       "learn",
       "understand",
@@ -560,7 +560,7 @@
     ],
     "description": "Practice structuring and revising prompts for environmental efficiency without losing effectiveness or quality of the output.",
     "link": "https://docs.google.com/document/d/1TZT-0s6SUqeAyaGb6Xrh74XAdlhF2bFF_rSO04xoP5g/edit?usp=sharing",
-    "category": "Thoughtful AI",
+    "category": "Evaluate AI",
     "keywords": [
       "critique",
       "evaluate",
@@ -717,7 +717,7 @@
     ],
     "description": "Create AI images and evaluate them for stereotypes and biases",
     "link": "https://docs.google.com/document/d/1newdAI7kplwf7LiPFuwkjGMQPn9DOb5IuX5C022c7jc/edit",
-    "category": "Thoughtful AI",
+    "category": "Evaluate AI",
     "keywords": [
       "critique",
       "evaluate",
@@ -784,7 +784,7 @@
     ],
     "description": "In this lesson, we’ll introduce students to the skill of lateral reading (Wineburg & McGrew, 2017) as one approach to fact-checking the information they get from AI.",
     "link": "https://craft.stanford.edu/resource/how-do-i-fact-check-ai-search-results/",
-    "category": "Thoughtful AI",
+    "category": "Evaluate AI",
     "keywords": [
       "critique",
       "evaluate",
@@ -807,7 +807,7 @@
     ],
     "description": "Explore ethical considerations around AI use, including issues of bias, fairness, privacy, and responsible deployment of AI systems.",
     "link": "https://craft.stanford.edu/resource/",
-    "category": "Thoughtful AI",
+    "category": "Evaluate AI",
     "keywords": [
       "ethics",
       "responsible",

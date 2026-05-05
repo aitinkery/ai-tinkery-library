@@ -23,42 +23,42 @@ const CLAUDE_MODEL   = 'claude-3-5-sonnet-20241022';
 //   id: name | category | time | audience | short description
 const ACTIVITY_CATALOG = `
 activity-01: Build-a-Bot | Create With AI | 45 minutes | Teacher | Create a custom chatbot using bot101.app
-activity-02: I Love Algorithms Card Game | Learn About AI | 45 minutes | Student | Machine-learning card game, no code or screens
+activity-02: I Love Algorithms Card Game | Understand AI | 45 minutes | Student | Machine-learning card game, no code or screens
 activity-03: Learning Math with AI | Learn/Teach With AI | 20 minutes | Student | Learn math with the help of an LLM
 activity-04: Creativity in the Age of AI | Create With AI | 1 hour | Teacher+Student | Read and discuss three d.school articles on AI and creativity
-activity-05: Design How AI Fits Your Workflow | Thoughtful AI | 45 minutes | Teacher | Five-stage workflow design: where does AI actually add value
+activity-05: Design How AI Fits Your Workflow | Evaluate AI | 45 minutes | Teacher | Five-stage workflow design: where does AI actually add value
 activity-06: Gradiants | Learn/Teach With AI | 30 minutes | Teacher | Map what aspects of work should/can use AI
 activity-07: Teachable Machine: Pose Model | Shape AI | 30 minutes | Student | Train your own pose-recognition AI model; see how ML works
 activity-08: Text to Virtual Reality | Use AI | 30 minutes | Student | Use skybox.blockadelabs.com to generate 360° worlds from text
 activity-09: Prompting Without a Keyboard | Use AI | 30 minutes | Student | Voice-based prompting; think-out-loud with an LLM
 activity-10: AI Game Creator | Create With AI | 30 minutes | Student | Build playable educational games from plain-language descriptions
-activity-11: AI or Not? (Virtual) | Learn About AI | 15 minutes | Teacher+Student | Sort cards into AI or not; generalize a rule
+activity-11: AI or Not? (Virtual) | Understand AI | 15 minutes | Teacher+Student | Sort cards into AI or not; generalize a rule
 activity-12: Prompting Lab | Use AI | 30 minutes | Teacher+Student | Experiment with structured, conversational, meta prompting
 activity-13: Text to 3D Objects | Use AI | 30 minutes | Student | Use meshy.ai to generate 3D models from text
-activity-14: Keep Your Data Private | Thoughtful AI | 30 minutes | Teacher | Host a chatbot locally and offline with Chatbox
-activity-15: More than GenAI | Learn About AI | 1 hour | Teacher+Student | Sort AIs into groups; build your own classifier
+activity-14: Keep Your Data Private | Evaluate AI | 30 minutes | Teacher | Host a chatbot locally and offline with Chatbox
+activity-15: More than GenAI | Understand AI | 1 hour | Teacher+Student | Sort AIs into groups; build your own classifier
 activity-16: AI + Storytelling | Learn/Teach With AI | 45 minutes | Student | Use AI in storytelling; weigh the trade-offs
 activity-17: LLM Learning Modes | Learn/Teach With AI | 30 minutes | Teacher | Compare normal vs learning mode across LLMs
 activity-18: The Bookshelf — Critical AI Literacy Library | Learn/Teach With AI | self-paced | Teacher | Curated book collection on AI and society
 activity-19: AI Music Generator | Use AI | 30 minutes | Student | Generate music with Suno.com; reflect on originality
 activity-20: Instructional Materials GenAI | Learn/Teach With AI | 45 minutes | Teacher | Use GenAI to create instructional materials for a learning objective
-activity-21: Quickdraw | Learn About AI | 30 minutes | Student | Doodle game where a neural net guesses; how ML recognizes patterns
+activity-21: Quickdraw | Understand AI | 30 minutes | Student | Doodle game where a neural net guesses; how ML recognizes patterns
 activity-22: Working Groups Facilitator Guide | Use AI | self-paced | Teacher | Facilitation guide for multi-session working groups
-activity-23: AI + Education Resource Repository | Learn About AI | self-paced | Teacher | Curated research and frameworks on AI in education
+activity-23: AI + Education Resource Repository | Understand AI | self-paced | Teacher | Curated research and frameworks on AI in education
 activity-24: Curiosity Boards — Resource Guide | Learn/Teach With AI | self-paced | Teacher | Visual interactive installations for AI exploration
 activity-25: Create and Edit Images | Use AI | 30 minutes | Student | Use canva.com AI features (text-to-image, magic resize)
-activity-26: Prompting Environmental Impact | Thoughtful AI | 30 minutes | Student | Revise prompts for environmental efficiency without losing quality
+activity-26: Prompting Environmental Impact | Evaluate AI | 30 minutes | Student | Revise prompts for environmental efficiency without losing quality
 activity-27: Deep Research | Use AI | 15 minutes | Teacher+Student | Use the Deep Research functionality in ChatGPT
 activity-28: Brainstorming AI Use Cases | Learn/Teach With AI | 15 minutes | Teacher+Student | Brainstorm AI use cases by role; risk vs reward map
 activity-29: AI Quests | Learn/Teach With AI | 45 minutes | Student | Game-based AI learning for middle schoolers (ages 11–14)
 activity-30: Vibe Code a Website | Create With AI | 30 minutes | Teacher | Step-by-step guide to deploy a vibe-coded tool
 activity-31: Feedback & Assessments with AI | Learn/Teach With AI | 30 minutes | Teacher | Set up ChatGPT to provide feedback on student work
 activity-32: Literature Review Strategy with GenAI | Use AI | 15 minutes | Student | Use AI to assist the literature review process
-activity-33: Evaluating GenAI Images | Thoughtful AI | 1 hour | Teacher+Student | Create AI images; evaluate for stereotypes and bias
+activity-33: Evaluating GenAI Images | Evaluate AI | 1 hour | Teacher+Student | Create AI images; evaluate for stereotypes and bias
 activity-34: Meta-prompting | Use AI | 30 minutes | Student | Use a chatbot to design, refine, and optimize prompts
 activity-35: DIY Agent with Zapier Agents | Shape AI | 30 minutes | Student | Design an agent that handles birthdays for a teacher
-activity-36: Fact checking AI | Thoughtful AI | 1 hour | Student | Lateral reading as a way to fact-check AI output
-activity-37: Ethical AI use | Thoughtful AI | 1 hour | Student | Ethical considerations: bias, fairness, privacy, responsible deployment
+activity-36: Fact checking AI | Evaluate AI | 1 hour | Student | Lateral reading as a way to fact-check AI output
+activity-37: Ethical AI use | Evaluate AI | 1 hour | Student | Ethical considerations: bias, fairness, privacy, responsible deployment
 `.trim();
 
 const SYSTEM_CONTEXT = `You are the guide for the Stanford AI Tinkery **Activity Library** — a browsable, filterable collection of 37 hands-on AI activities for teachers and students.
@@ -72,7 +72,7 @@ const SYSTEM_CONTEXT = `You are the guide for the Stanford AI Tinkery **Activity
 4. Thoughtful — AI is a system to be questioned and shaped
 
 **Categories used by the library:**
-Learn About AI · Use AI · Create With AI · Learn/Teach With AI · Shape AI · Thoughtful AI
+Understand AI · Use AI · Create With AI · Learn/Teach With AI · Shape AI · Evaluate AI
 
 **Activities you can recommend (use the id, e.g. "activity-07"):**
 ${ACTIVITY_CATALOG}
