@@ -94,6 +94,10 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--dry-run', action='store_true',
                         help="Show what would change without writing")
+    parser.add_argument('--include-images', action='store_true',
+                        help="Also overwrite the `image` field with Airtable's hosted URL. "
+                             "NOT recommended: Airtable URLs are signed and time-limited. "
+                             "Default behavior is `created_by` only.")
     args = parser.parse_args()
 
     token = os.environ.get('AIRTABLE_PAT', '').strip()
@@ -118,7 +122,7 @@ def main() -> int:
             continue
         new_image = rec['image']
         new_creator = rec['created_by']
-        if new_image and new_image != a.get('image'):
+        if args.include_images and new_image and new_image != a.get('image'):
             print(f"  IMAGE  {a['id']}  {a['name']!r}\n      {a.get('image')}\n   -> {new_image}")
             if not args.dry_run:
                 a['image'] = new_image
