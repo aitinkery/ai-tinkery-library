@@ -199,8 +199,42 @@
     line-height: 1.5;
     margin-bottom: 12px;
     flex: 1;
-    display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;
-    overflow: hidden;
+    /* Scrollable when content overflows the card; keeps the card height stable. */
+    max-height: 8.5em;
+    overflow-y: auto;
+    /* Subtle scrollbar so it doesn't fight the brand */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(199, 82, 10, 0.4) transparent;
+  }
+  .card p.desc::-webkit-scrollbar { width: 5px; }
+  .card p.desc::-webkit-scrollbar-track { background: transparent; }
+  .card p.desc::-webkit-scrollbar-thumb {
+    background: rgba(199, 82, 10, 0.4);
+    border-radius: 4px;
+  }
+  .card p.desc::-webkit-scrollbar-thumb:hover { background: rgba(199, 82, 10, 0.6); }
+
+  /* Toast notifications for ephemeral feedback (link copied, etc.) */
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--ink);
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 9999px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s, transform 0.2s;
+    z-index: 1000;
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
   }
   .card-row { display: flex; gap: 8px; align-items: center; }
   .btn-explore {
@@ -371,7 +405,7 @@
     .grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
     .card { padding: 10px; }
     .card h3 { font-size: 14px; }
-    .card p.desc { font-size: 12.5px; -webkit-line-clamp: 3; }
+    .card p.desc { font-size: 12.5px; max-height: 7em; }
     .chat-fab { right: 12px; bottom: 12px; padding: 12px 16px; font-size: 14px; }
     .chat-panel { right: 0; bottom: 0; width: 100%; height: 100%; border-radius: 0; }
   }
@@ -601,7 +635,8 @@
                   title="${saved ? 'Remove from saved' : 'Save for later'}"
                   aria-label="${saved ? 'Unsave' : 'Save'} ${esc(a.name)}">${saved ? '★' : '☆'}</button>
           <button class="icon-btn" data-share-id="${esc(a.id)}"
-                  aria-label="Copy link to ${esc(a.name)}" title="Copy link">🔗</button>
+                  aria-label="Copy share link for ${esc(a.name)}"
+                  title="Copy link to share this activity">🔗</button>
         </div>
       </article>
     `;
@@ -616,9 +651,29 @@
       const id = shareBtn.getAttribute('data-share-id');
       const a = state.byId.get(id);
       if (!a) return;
-      copyToClipboard(a.link).then(() => flashButton(shareBtn, '✓'));
+      copyToClipboard(a.link).then(() => {
+        flashButton(shareBtn, '✓');
+        showToast('Link copied — paste anywhere to share');
+      });
     }
   });
+
+  // ---------- Toast ----------
+  let toastEl = null;
+  let toastTimer = null;
+  function showToast(message) {
+    if (!toastEl) {
+      toastEl = document.createElement('div');
+      toastEl.className = 'toast';
+      toastEl.setAttribute('role', 'status');
+      toastEl.setAttribute('aria-live', 'polite');
+      document.body.appendChild(toastEl);
+    }
+    toastEl.textContent = message;
+    requestAnimationFrame(() => toastEl.classList.add('show'));
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toastEl.classList.remove('show'), 2200);
+  }
 
   function flashButton(btn, text) {
     const orig = btn.textContent;
@@ -757,6 +812,7 @@
       const orig = btn.textContent;
       btn.textContent = '✓ Copied';
       setTimeout(() => { btn.textContent = orig; }, 1200);
+      showToast('Saved list copied to clipboard');
     });
   });
 
