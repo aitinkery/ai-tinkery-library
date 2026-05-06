@@ -23,7 +23,7 @@ const CLAUDE_MODEL   = 'claude-3-5-sonnet-20241022';
 //   id: name | category | time | audience | created_by | short description
 // (created_by may be blank if unset; the field is added in line so order is stable)
 const ACTIVITY_CATALOG = `
-activity-01: Build-a-Bot | Use AI | 45 minutes | Teacher |  | Create a custom chatbot using bot101.app
+activity-01: Build-a-Bot | Shape AI | 45 minutes | Teacher |  | Create a custom chatbot using bot101.app
 activity-02: I Love Algorithms Card Game | Understand AI | 45 minutes | Student |  | Machine-learning card game, no code or screens
 activity-03: Learning Math with AI | Learn/Teach With AI | 20 minutes | Student |  | Learn math with the help of an LLM
 activity-04: Creativity in the Age of AI | Understand AI | 1 hour | Teacher+Student |  | Read and discuss three d.school articles on AI and creativity
