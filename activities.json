@@ -56,7 +56,7 @@
     ],
     "description": "Experience learning math with the help of an LLM",
     "link": "https://docs.google.com/document/d/1i8BPY3XOkEUNViFEZzXt19EinpntNhFuphSQhWFzSBE/copy",
-    "category": "Learn/Teach With AI",
+    "category": "Understand AI",
     "keywords": [
       "teach",
       "education",
@@ -128,7 +128,7 @@
     ],
     "description": "Map what aspects of work should/can use AI",
     "link": "https://www.graidients.ai/v1/",
-    "category": "Learn/Teach With AI",
+    "category": "Evaluate AI",
     "keywords": [
       "teach",
       "education",
@@ -172,7 +172,7 @@
     ],
     "description": "PLAY and TINKER Go to skybox.blockadelabs.com to create 360 degree virtual worlds with simple text prompts. REFLECT How does using this tool shift your role as a creator/thinker? How could this tool be used for education, storytelling, or environmental simulations?",
     "link": "skybox.blockadelabs.com",
-    "category": "Use AI",
+    "category": "Shape AI",
     "keywords": [
       "use",
       "tool",
@@ -196,7 +196,7 @@
     ],
     "description": "Explore voice-based prompting using any available voice interface. Practice \"thinking out loud\" to an AI, learn how conversational prompting differs from written prompts, and discover which tasks work best with voice interaction. By the end, you'll have developed strategies for effective voice prompting in your own context.",
     "link": "https://docs.google.com/document/d/1P596JWnkat5OqR4p9QdOCX7TKfxj_YpE/copy",
-    "category": "Use AI",
+    "category": "Understand AI",
     "keywords": [
       "use",
       "tool",
@@ -218,9 +218,9 @@
     "audience": [
       "Student"
     ],
-    "description": "AI-powered game creation tools allow you to build playable educational games by describing what you want in plain language. Platforms like Rosebud AI, Google Gemini Canvas, and Lovable lower the barrier to game development\u2014no coding required. You can create quiz games, interactive simulations, choose-your-own-adventure stories, and more.",
+    "description": "AI-powered game creation tools allow you to build playable educational games by describing what you want in plain language. Platforms like Rosebud AI, Google Gemini Canvas, and Lovable lower the barrier to game development—no coding required. You can create quiz games, interactive simulations, choose-your-own-adventure stories, and more.",
     "link": "https://docs.google.com/document/d/1a_45vs8vzJDisMhxZpb9EHdOZ3vvFig7/copy",
-    "category": "Use AI",
+    "category": "Shape AI",
     "keywords": [
       "create",
       "build",
@@ -291,7 +291,7 @@
     ],
     "description": "PLAY and TINKER Visit meshy.ai to input a description of the 3D object you want. Meshy will generate a model you can view, edit, and download. REFLECT How does using this tool shift your role as a creator/thinker? What new possibilities does this tool create for educators?",
     "link": "meshy.ai",
-    "category": "Use AI",
+    "category": "Shape AI",
     "keywords": [
       "use",
       "tool",
@@ -361,7 +361,7 @@
     ],
     "description": "In this lesson, students will explore how AI can be used in storytelling including how to consider the benefits and trade-offs of incorporating AI into the storytelling process.",
     "link": "https://craft.stanford.edu/resource/can-ai-help-with-storytelling/",
-    "category": "Learn/Teach With AI",
+    "category": "Space Design",
     "keywords": [
       "teach",
       "education",
@@ -384,7 +384,7 @@
     ],
     "description": "Compare normal mode to learning mode across LLMs",
     "link": "https://docs.google.com/presentation/d/1e7bQQ_TdcncLjkYlr7M1YBXwuocTho-28--SIPd37ok/copy",
-    "category": "Learn/Teach With AI",
+    "category": "Understand AI",
     "keywords": [
       "teach",
       "education",
@@ -406,7 +406,7 @@
     ],
     "description": "Curated book collection on AI and society",
     "link": "https://docs.google.com/document/u/0/d/1PvyxI9k7TfIvzp2nY5yDD5gKJsXQ-QLMccRiYT6MYFk/copy",
-    "category": "Learn/Teach With AI",
+    "category": "Understand AI",
     "keywords": [
       "teach",
       "education",
@@ -428,7 +428,7 @@
     ],
     "description": "PLAY and TINKER Visit Suno.com to generate music in minutes. Customize tracks by selecting mood, length, and instruments to match your creative needs. REFLECT How does AI-generated music compare to human-composed music in terms of creativity and originality? If you didn't tell someone this was AI-generated, would they know? Does it matter?",
     "link": "suno.com",
-    "category": "Use AI",
+    "category": "Shape AI",
     "keywords": [
       "use",
       "tool",
@@ -452,7 +452,7 @@
     ],
     "description": "Create an instructional material to meet a learning objective",
     "link": "https://docs.google.com/document/d/1SsPuM45IlhBzIP8HeDfja2prgEYZhaWV2M7cLgpHTHw/copy",
-    "category": "Learn/Teach With AI",
+    "category": "Space Design",
     "keywords": [
       "teach",
       "education",
@@ -495,7 +495,7 @@
     ],
     "description": "Facilitation guide for running multi-session working groups",
     "link": "https://docs.google.com/document/u/0/d/1CMUrShHJ8d91PNdwRuuc5-K1PkDtydIGDnFKz3LJrOY/copy",
-    "category": "Use AI",
+    "category": "Space Design",
     "keywords": [
       "use",
       "tool",
@@ -539,7 +539,7 @@
     ],
     "description": "Visual interactive installations for AI exploration",
     "link": "https://docs.google.com/document/u/0/d/1cibLKLnawCDsUFNLYMwE0_vcqu78VBYc5sNy0x1jaLM/copy",
-    "category": "Learn/Teach With AI",
+    "category": "Space Design",
     "keywords": [
       "teach",
       "education",
@@ -562,7 +562,7 @@
     ],
     "description": "PLAY and TINKER Visit canva.com to experiment with AI-powered features like text-to-image, background remover, and magic resize to create custom educational materials effortlessly.",
     "link": "canva.com",
-    "category": "Use AI",
+    "category": "Shape AI",
     "keywords": [
       "use",
       "tool",
@@ -610,7 +610,7 @@
     ],
     "description": "Use the Deep Research functionality in ChatGPT",
     "link": "https://drive.google.com/file/d/1UlhX-aRDbQsXZEkT1z8Y-EFZDPSXunlt/view",
-    "category": "Use AI",
+    "category": "Understand AI",
     "keywords": [
       "use",
       "tool",
@@ -634,7 +634,7 @@
     ],
     "description": "Brainstorm AI use cases by role/context; Risk vs Reward Map",
     "link": "https://docs.google.com/presentation/d/1y9KGDG_kqMfMZwz9ijh_DlMOjxBtMEy2B49j9UXqx8c/copy",
-    "category": "Learn/Teach With AI",
+    "category": "Evaluate AI",
     "keywords": [
       "teach",
       "education",
@@ -656,7 +656,7 @@
     ],
     "description": "This resource is based on AI Quests, a game-based learning experience designed to teach middle school students (ages 11-14) about AI",
     "link": "https://craft.stanford.edu/resource/how-can-ai-help-a-community-prepare-for-a-flood/",
-    "category": "Learn/Teach With AI",
+    "category": "Space Design",
     "keywords": [
       "teach",
       "education",
@@ -679,7 +679,7 @@
     ],
     "description": "Step-by-step guide to deploy a vibe coded tool",
     "link": "https://docs.google.com/document/d/1Kl3G3DP1_7Gl5HpMl_5QrXallxb9sKoBz2I3qaySpbA/edit",
-    "category": "Use AI",
+    "category": "Shape AI",
     "keywords": [
       "create",
       "build",
@@ -704,7 +704,7 @@
     ],
     "description": "Set up ChatGPT to provide feedback on student work",
     "link": "https://docs.google.com/presentation/d/1Mz0jUSYyeK3OunjA3TG53cH9dRe4NpCapcxNAAf1CtM/copy",
-    "category": "Learn/Teach With AI",
+    "category": "Evaluate AI",
     "keywords": [
       "teach",
       "education",
@@ -726,7 +726,7 @@
     ],
     "description": "Use AI to assist with the literature review process",
     "link": "https://docs.google.com/document/u/0/d/1SwHCjFkJlHNHBH848Ey9lARpH9e3b75tqnTFnqZrGac/copy",
-    "category": "Use AI",
+    "category": "Understand AI",
     "keywords": [
       "use",
       "tool",
@@ -773,7 +773,7 @@
     ],
     "description": "Meta-prompting is the practice of using an chatbot to design, refine, and optimize prompts. This process helps improve your results and teaches you how to use AI more effectively.",
     "link": "https://docs.google.com/document/d/1chUWs6xPlJjm_yxLVZNmGauoISGgIcWwgV6JptEESyQ/copy",
-    "category": "Use AI",
+    "category": "Understand AI",
     "keywords": [
       "use",
       "tool",
@@ -817,7 +817,7 @@
     "audience": [
       "Student"
     ],
-    "description": "In this lesson, we\u2019ll introduce students to the skill of lateral reading (Wineburg & McGrew, 2017) as one approach to fact-checking the information they get from AI.",
+    "description": "In this lesson, we’ll introduce students to the skill of lateral reading (Wineburg & McGrew, 2017) as one approach to fact-checking the information they get from AI.",
     "link": "https://craft.stanford.edu/resource/how-do-i-fact-check-ai-search-results/",
     "category": "Evaluate AI",
     "keywords": [
