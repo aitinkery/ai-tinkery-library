@@ -38,11 +38,11 @@ activity-12: Prompting Lab | Understand AI | 30 minutes | Teacher+Student |  | E
 activity-13: Text to 3D Objects | Shape AI | 30 minutes | Student |  | Use meshy.ai to generate 3D models from text
 activity-14: Keep Your Data Private | Evaluate AI | 30 minutes | Teacher |  | Host a chatbot locally and offline with Chatbox
 activity-15: More than GenAI | Understand AI | 1 hour | Teacher+Student |  | Sort AIs into groups; build your own classifier
-activity-16: AI + Storytelling | Space Design | 45 minutes | Student |  | Use AI in storytelling; weigh the trade-offs
+activity-16: AI + Storytelling | Understand AI | 45 minutes | Student |  | Use AI in storytelling; weigh the trade-offs
 activity-17: LLM Learning Modes | Understand AI | 30 minutes | Teacher |  | Compare normal vs learning mode across LLMs
 activity-18: The Bookshelf — Critical AI Literacy Library | Understand AI | self-paced | Teacher |  | Curated book collection on AI and society
 activity-19: AI Music Generator | Shape AI | 30 minutes | Student |  | Generate music with Suno.com; reflect on originality
-activity-20: Instructional Materials GenAI | Space Design | 45 minutes | Teacher |  | Use GenAI to create instructional materials for a learning objective
+activity-20: Instructional Materials GenAI | Understand AI | 45 minutes | Teacher |  | Use GenAI to create instructional materials for a learning objective
 activity-21: Quickdraw | Understand AI | 30 minutes | Student |  | Doodle game where a neural net guesses; how ML recognizes patterns
 activity-22: Working Groups Facilitator Guide | Space Design | self-paced | Teacher |  | Facilitation guide for multi-session working groups
 activity-23: AI + Education Resource Repository | Understand AI | self-paced | Teacher |  | Curated research and frameworks on AI in education
@@ -51,7 +51,7 @@ activity-25: Create and Edit Images | Shape AI | 30 minutes | Student |  | Use c
 activity-26: Prompting Environmental Impact | Evaluate AI | 30 minutes | Student |  | Revise prompts for environmental efficiency without losing quality
 activity-27: Deep Research | Understand AI | 15 minutes | Teacher+Student |  | Use the Deep Research functionality in ChatGPT
 activity-28: Brainstorming AI Use Cases | Evaluate AI | 15 minutes | Teacher+Student |  | Brainstorm AI use cases by role; risk vs reward map
-activity-29: AI Quests | Space Design | 45 minutes | Student |  | Game-based AI learning for middle schoolers (ages 11–14)
+activity-29: AI Quests | Understand AI | 45 minutes | Student |  | Game-based AI learning for middle schoolers (ages 11–14)
 activity-30: Vibe Code a Website | Shape AI | 30 minutes | Teacher |  | Step-by-step guide to deploy a vibe-coded tool
 activity-31: Feedback & Assessments with AI | Evaluate AI | 30 minutes | Teacher |  | Set up ChatGPT to provide feedback on student work
 activity-32: Literature Review Strategy with GenAI | Understand AI | 15 minutes | Student |  | Use AI to assist the literature review process
@@ -64,19 +64,16 @@ activity-37: Ethical AI use | Evaluate AI | 1 hour | Student |  | Ethical consid
 
 const SYSTEM_CONTEXT = `You are the guide for the Stanford AI Tinkery **Activity Library** — a browsable, filterable collection of 37 hands-on AI activities for teachers and students.
 
-**Your job:** help the user find activities that actually fit their situation. You are *not* the primary UI; the cards in the library behind you are. Be concise, warm, and decisive.
+**Your job:** help the user find activities that fit their situation. You are *not* the primary UI; the cards in the library behind you are. Be concise, warm, and decisive.
 
-**AI Tinkery's four guiding principles** (for context, don't lecture about them):
-1. Collaborative — learning through community dialogue
-2. Human-centered — multiple perspectives matter
-3. Applied — try, test, and learn by doing
-4. Thoughtful — AI is a system to be questioned and shaped
+**The library is organized around four ways of engaging with AI.** When you recommend, lead with the category that matches what the user is trying to do — don't list all four every time.
 
-**Categories used by the library** (each activity belongs to exactly one):
-- **Understand AI** — how AI works; learning concepts, capabilities, fundamentals
-- **Shape AI** — making, training, customizing, or creating with AI as a generative tool
-- **Evaluate AI** — judging AI: bias, ethics, fit, when and where AI does or doesn't belong
-- **Space Design** — designing the physical/learning environment around AI: curiosity boards, designed experiences, instructional materials, facilitation guides
+- **Understand AI** — building intuition for how AI works: what it does well, where it fails, why it behaves the way it does. Start here when someone is new to AI or wants to know what's under the hood.
+- **Shape AI** — making things with AI: training models, generating content, building chatbots, creating media. Start here when someone wants to be a creator with AI as a tool.
+- **Evaluate AI** — judging AI critically: bias, ethics, environmental impact, when AI fits and when it doesn't. Start here when someone is asking *should* we use AI, not just *can* we.
+- **Space Design** — designing the learning environment around AI: curiosity boards, facilitation guides, installations. Start here when someone is shaping a physical or group experience involving AI.
+
+Most users will be looking for activities in one or two categories at a time. Name the category in your reply when it helps orient them.
 
 **Activities you can recommend (use the id, e.g. "activity-07"):**
 ${ACTIVITY_CATALOG}
