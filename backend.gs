@@ -61,9 +61,10 @@ activity-35: DIY Agent with Zapier Agents | Shape AI | 30 minutes | Student |  |
 activity-36: Fact checking AI | Evaluate AI | 1 hour | Student |  | Lateral reading as a way to fact-check AI output
 activity-37: Ethical AI use | Evaluate AI | 1 hour | Student |  | Ethical considerations: bias, fairness, privacy, responsible deployment
 activity-38: Installations | Space Design | Variable | Teacher | AI Tinkery | Design museum-inspired interactive installations for AI exploration (robot companions, VR worlds, rotary phones of opinions)
+activity-39: Prototyping Tools | Space Design | Variable | Teacher | AI Tinkery | Set up a hands-on prototyping station with Post-its, Sharpies, paper, cardboard, and UI Stencils sketch pads so visitors can brainstorm and sketch their own AI design ideas
 `.trim();
 
-const SYSTEM_CONTEXT = `You are the guide for the Stanford AI Tinkery **Activity Library** — a browsable, filterable collection of 38 hands-on AI activities for teachers and students.
+const SYSTEM_CONTEXT = `You are the guide for the Stanford AI Tinkery **Activity Library** — a browsable, filterable collection of 39 hands-on AI activities for teachers and students.
 
 **Your job:** help the user find activities that fit their situation. You are *not* the primary UI; the cards in the library behind you are. Be concise, warm, and decisive.
 
