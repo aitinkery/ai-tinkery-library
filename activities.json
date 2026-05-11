@@ -881,5 +881,32 @@
     ],
     "image": "/activity-images/activity-38.jpg",
     "created_by": "AI Tinkery"
+  },
+  {
+    "id": "activity-39",
+    "name": "Prototyping Tools",
+    "type": "Resource Guide",
+    "time": "Variable",
+    "time_minutes": null,
+    "audience": [
+      "Teacher"
+    ],
+    "description": "Set up a hands-on prototyping station in your learning space stocked with low-tech tools that invite visitors to brainstorm and sketch their own AI design ideas. Materials include Post-it notes, Sharpies, paper, cardboard, and mobile phone + website sketch pads from UI Stencils.",
+    "link": "https://docs.google.com/document/d/1RKQOorlTxFxKqNST2J5vWVXk3JSmklBY3_BBZypTNpY/edit",
+    "category": "Space Design",
+    "keywords": [
+      "space",
+      "design",
+      "prototype",
+      "sketch",
+      "brainstorm",
+      "post-it",
+      "ui stencils",
+      "design thinking",
+      "facilitation",
+      "hands-on"
+    ],
+    "image": "/activity-images/activity-39.jpg",
+    "created_by": "AI Tinkery"
   }
 ]
