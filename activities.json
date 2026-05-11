@@ -406,7 +406,7 @@
     ],
     "description": "Curated book collection on AI and society",
     "link": "https://docs.google.com/document/u/0/d/1PvyxI9k7TfIvzp2nY5yDD5gKJsXQ-QLMccRiYT6MYFk/copy",
-    "category": "Understand AI",
+    "category": "Space Design",
     "keywords": [
       "teach",
       "education",
@@ -855,5 +855,31 @@
     ],
     "image": "/activity-images/activity-37.jpg",
     "created_by": "CRAFT"
+  },
+  {
+    "id": "activity-38",
+    "name": "Installations",
+    "type": "Resource Guide",
+    "time": "Variable",
+    "time_minutes": null,
+    "audience": [
+      "Teacher"
+    ],
+    "description": "Design museum-inspired interactive installations for AI exploration in your space. Examples include a robot companion to talk to, a VR headset showing a prompt-generated world, or a rotary phone playing opinions about AI from different voices.",
+    "link": "https://docs.google.com/document/d/1mLoMQH3wNFk5-fN9sj-7ZIwr-pNGfp7haTwdwSf7e-Q/edit",
+    "category": "Space Design",
+    "keywords": [
+      "space",
+      "design",
+      "installation",
+      "museum",
+      "interactive",
+      "physical",
+      "exhibit",
+      "environment",
+      "facilitation"
+    ],
+    "image": "/activity-images/activity-38.jpg",
+    "created_by": "AI Tinkery"
   }
 ]
