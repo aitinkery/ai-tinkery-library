@@ -40,7 +40,7 @@ activity-14: Keep Your Data Private | Evaluate AI | 30 minutes | Teacher |  | Ho
 activity-15: More than GenAI | Understand AI | 1 hour | Teacher+Student |  | Sort AIs into groups; build your own classifier
 activity-16: AI + Storytelling | Understand AI | 45 minutes | Student |  | Use AI in storytelling; weigh the trade-offs
 activity-17: LLM Learning Modes | Understand AI | 30 minutes | Teacher |  | Compare normal vs learning mode across LLMs
-activity-18: The Bookshelf — Critical AI Literacy Library | Understand AI | self-paced | Teacher |  | Curated book collection on AI and society
+activity-18: The Bookshelf — Critical AI Literacy Library | Space Design | self-paced | Teacher |  | Curated book collection on AI and society
 activity-19: AI Music Generator | Shape AI | 30 minutes | Student |  | Generate music with Suno.com; reflect on originality
 activity-20: Instructional Materials GenAI | Understand AI | 45 minutes | Teacher |  | Use GenAI to create instructional materials for a learning objective
 activity-21: Quickdraw | Understand AI | 30 minutes | Student |  | Doodle game where a neural net guesses; how ML recognizes patterns
@@ -60,9 +60,10 @@ activity-34: Meta-prompting | Understand AI | 30 minutes | Student |  | Use a ch
 activity-35: DIY Agent with Zapier Agents | Shape AI | 30 minutes | Student |  | Design an agent that handles birthdays for a teacher
 activity-36: Fact checking AI | Evaluate AI | 1 hour | Student |  | Lateral reading as a way to fact-check AI output
 activity-37: Ethical AI use | Evaluate AI | 1 hour | Student |  | Ethical considerations: bias, fairness, privacy, responsible deployment
+activity-38: Installations | Space Design | Variable | Teacher | AI Tinkery | Design museum-inspired interactive installations for AI exploration (robot companions, VR worlds, rotary phones of opinions)
 `.trim();
 
-const SYSTEM_CONTEXT = `You are the guide for the Stanford AI Tinkery **Activity Library** — a browsable, filterable collection of 37 hands-on AI activities for teachers and students.
+const SYSTEM_CONTEXT = `You are the guide for the Stanford AI Tinkery **Activity Library** — a browsable, filterable collection of 38 hands-on AI activities for teachers and students.
 
 **Your job:** help the user find activities that fit their situation. You are *not* the primary UI; the cards in the library behind you are. Be concise, warm, and decisive.
 
